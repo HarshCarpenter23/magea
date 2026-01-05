@@ -1,0 +1,1005 @@
+2025-09-24 17:02:23,261 - __main__ - INFO - ================================================================================
+2025-09-24 17:02:23,261 - __main__ - INFO - TAI V6 DATASET PREPARATION PIPELINE - COMPLETE FIXED VERSION
+2025-09-24 17:02:23,261 - __main__ - INFO - ================================================================================
+2025-09-24 17:02:23,261 - __main__ - INFO - Log file: logs/tai_v6_dataset_preparation_20250924_170223.log
+2025-09-24 17:02:23,261 - __main__ - INFO - Python version: 3.10.12 (main, Aug 15 2025, 14:32:43) [GCC 11.4.0]
+2025-09-24 17:02:23,261 - __main__ - INFO - Working directory: /home/paperspace/TAI_V6.2/backtestingv2
+2025-09-24 17:02:23,261 - __main__ - INFO - Start time: 2025-09-24 17:02:23.261450
+2025-09-24 17:02:23,261 - __main__ - INFO - Log level: 20
+2025-09-24 17:02:23,261 - __main__ - INFO - Configuration:
+2025-09-24 17:02:23,261 - __main__ - INFO -   start_date: 2025-08-01
+2025-09-24 17:02:23,261 - __main__ - INFO -   end_date: 2025-09-02
+2025-09-24 17:02:23,261 - __main__ - INFO -   output_dir: data/tai_v6_datasets
+2025-09-24 17:02:23,261 - __main__ - INFO -   target_samples: 100000
+2025-09-24 17:02:23,261 - __main__ - INFO - Checking existing component dependencies...
+2025-09-24 17:02:23,646 - backtesting - ERROR - ❌ Analysis-compliant backtest engine import failed: cannot import name 'calculate_atr_adjusted_target' from 'backtesting.backtest_engine' (/home/paperspace/TAI_V6.2/backtestingv2/backtesting/backtest_engine.py)
+2025-09-24 17:02:23,646 - backtesting - INFO - ✅ Analysis-compliant dynamic adapter loaded successfully
+2025-09-24 17:02:23,646 - backtesting - WARNING - ⚠️ Analysis-compliant position manager not available: No module named 'backtesting.position_manager'
+2025-09-24 17:02:23,647 - backtesting - INFO - ✅ Performance metrics loaded successfully
+2025-09-24 17:02:23,647 - backtesting - WARNING - ⚠️ TAI V6 Backtesting System - Partial Analysis Compliance
+2025-09-24 17:02:23,647 - backtesting - WARNING - 🔧 Critical components missing - see validation report for details
+2025-09-24 17:02:23,647 - backtesting - INFO - 📊 📊 ❌ LOW ANALYSIS COMPLIANCE - Critical updates needed
+2025-09-24 17:02:23,647 - data_preparation.label_pipeline - INFO - ✅ Integrated backtesting engine imported
+2025-09-24 17:02:23,647 - data_preparation.label_pipeline - INFO - ✅ Dynamic adapter imported
+2025-09-24 17:02:23,647 - data_preparation.label_pipeline - WARNING - ⚠️ Position manager not available: No module named 'backtesting.position_manager'
+2025-09-24 17:02:23,647 - data_preparation.label_pipeline - INFO - ✅ TA-Lib available
+2025-09-24 17:02:23,757 - data_preparation.label_pipeline - INFO - ✅ Scikit-learn available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ MultiAssetDatabaseManager available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ SynchronizedLabelGenerator available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ LabelPipeline wrapper available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ PreparationConfig available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ FeaturePipeline available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ IntegratedDynamicBacktestEngine available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ pandas available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ numpy available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ psycopg2 available
+2025-09-24 17:02:23,773 - __main__ - INFO - ✅ TA-Lib available
+2025-09-24 17:02:23,773 - __main__ - INFO - Dependencies: 10/10 available
+2025-09-24 17:02:23,773 - __main__ - INFO - 🎉 Minimum requirements met
+2025-09-24 17:02:23,773 - __main__ - INFO - 🚀 Starting Complete Fixed Pipeline...
+2025-09-24 17:02:23,773 - __main__.FixedDatasetPipeline - INFO - 🚀 Starting TAI V6 Complete Fixed Dataset Preparation Pipeline
+2025-09-24 17:02:23,773 - __main__.FixedDatasetPipeline - INFO - Step 1: Initializing existing components...
+2025-09-24 17:02:23,773 - __main__.FixedDatasetPipeline - INFO - Initializing existing components...
+2025-09-24 17:02:23,773 - __main__ - INFO - Checking existing component dependencies...
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ MultiAssetDatabaseManager available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ SynchronizedLabelGenerator available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ LabelPipeline wrapper available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ PreparationConfig available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ FeaturePipeline available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ IntegratedDynamicBacktestEngine available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ pandas available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ numpy available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ psycopg2 available
+2025-09-24 17:02:23,774 - __main__ - INFO - ✅ TA-Lib available
+2025-09-24 17:02:23,774 - __main__ - INFO - Dependencies: 10/10 available
+2025-09-24 17:02:23,774 - __main__ - INFO - 🎉 Minimum requirements met
+2025-09-24 17:02:23,774 - __main__.FixedDatasetPipeline - INFO - ✅ Enhanced preparation config initialized
+2025-09-24 17:02:23,774 - data_preparation.multi_asset_database.DatabaseManager - INFO - Initializing TimescaleDB connection...
+2025-09-24 17:02:24,786 - data_preparation.multi_asset_database.DatabaseManager - INFO - Connected to TimescaleDB: PostgreSQL 17.6 (Ubuntu 17.6-1.pgdg22.04+1) on aarch64-unknown-linux-gnu, compil...
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO - Building complete asset registry...
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ Weight distribution validated: 1.000000 = 1.0
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO - Initialized with 33 asset/timeframe combinations
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO - Weight distribution by asset class:
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO -   crypto: 0.700 (70.0%)
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO -   commodities: 0.180 (18.0%)
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO -   economic: 0.080 (8.0%)
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO -   forex: 0.030 (3.0%)
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO -   stocks: 0.010 (1.0%)
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO - Total weight: 1.000000
+2025-09-24 17:02:24,787 - data_preparation.multi_asset_database.DatabaseManager - INFO - Split verification: Crypto 70.0%, Context 30.0%
+2025-09-24 17:02:24,787 - __main__.FixedDatasetPipeline - INFO - ✅ Database manager initialized
+2025-09-24 17:02:24,787 - backtesting.dynamic_adapter - INFO - Complete Analysis-Compliant Dynamic Target Adapter initialized
+2025-09-24 17:02:24,787 - backtesting.dynamic_adapter - INFO - ✅ ATR periods: [14, 20, 30]
+2025-09-24 17:02:24,787 - backtesting.dynamic_adapter - INFO - ✅ Minimum stop loss: 0.002 (0.2%)
+2025-09-24 17:02:24,787 - backtesting.dynamic_adapter - INFO - ✅ Maximum position size: 20.0% (20%)
+2025-09-24 17:02:24,787 - backtesting.dynamic_adapter - INFO - ✅ Bitcoin arbitrage threshold: 0.002
+2025-09-24 17:02:24,787 - backtesting.dynamic_adapter - INFO - ✅ Market regime mapping: 6 regimes
+2025-09-24 17:02:24,787 - backtesting.backtest_engine - INFO - Analysis-Compliant Integrated Dynamic Backtest Engine with REAL Label Generation initialized
+2025-09-24 17:02:24,787 - backtesting.backtest_engine - INFO - ✅ Minimum profit target: 0.002 (0.2%)
+2025-09-24 17:02:24,787 - backtesting.backtest_engine - INFO - ✅ Scenarios: ['aggressive', 'neutral', 'defensive']
+2025-09-24 17:02:24,787 - backtesting.backtest_engine - INFO - Total combinations before pruning: 2,217,072
+2025-09-24 17:02:24,787 - backtesting.backtest_engine - INFO - Expected reduction: 95.5% (2,217,072 → 100,000)
+2025-09-24 17:02:24,788 - backtesting.backtest_engine - INFO - ✅ Target combinations: 100,000
+2025-09-24 17:02:24,788 - backtesting.backtest_engine - INFO - ✅ REAL backtesting mode: No artificial signal generation
+2025-09-24 17:02:24,788 - data_preparation.label_pipeline - INFO - ✅ Integrated backtesting engine initialized
+2025-09-24 17:02:24,788 - backtesting.dynamic_adapter - INFO - Complete Analysis-Compliant Dynamic Target Adapter initialized
+2025-09-24 17:02:24,788 - backtesting.dynamic_adapter - INFO - ✅ ATR periods: [14, 20, 30]
+2025-09-24 17:02:24,788 - backtesting.dynamic_adapter - INFO - ✅ Minimum stop loss: 0.002 (0.2%)
+2025-09-24 17:02:24,788 - backtesting.dynamic_adapter - INFO - ✅ Maximum position size: 20.0% (20%)
+2025-09-24 17:02:24,788 - backtesting.dynamic_adapter - INFO - ✅ Bitcoin arbitrage threshold: 0.002
+2025-09-24 17:02:24,788 - backtesting.dynamic_adapter - INFO - ✅ Market regime mapping: 6 regimes
+2025-09-24 17:02:24,788 - data_preparation.label_pipeline - INFO - ✅ Dynamic adapter initialized
+2025-09-24 17:02:24,788 - data_preparation.label_pipeline - INFO - Synchronized Label Generator initialized
+2025-09-24 17:02:24,788 - data_preparation.label_pipeline - INFO - Components available: Engine=True, Adapter=True, Manager=False
+2025-09-24 17:02:24,788 - __main__.FixedDatasetPipeline - INFO - ✅ SynchronizedLabelGenerator initialized
+2025-09-24 17:02:24,788 - __main__.FixedDatasetPipeline - INFO - Label pipeline methods available: ['generate_synchronized_labels']
+2025-09-24 17:02:24,788 - data_preparation.feature_pipeline - INFO - Feature Pipeline initialized
+2025-09-24 17:02:24,788 - __main__.FixedDatasetPipeline - INFO - ✅ Feature pipeline initialized
+2025-09-24 17:02:24,788 - __main__.FixedDatasetPipeline - INFO - Step 2: Loading multi-asset training data...
+2025-09-24 17:02:24,788 - __main__.FixedDatasetPipeline - INFO - Loading multi-asset training data...
+2025-09-24 17:02:24,788 - data_preparation.multi_asset_database.DatabaseManager - INFO - Loading training data with 70/30 split
+2025-09-24 17:02:24,788 - data_preparation.multi_asset_database.DatabaseManager - INFO - Target: 100,000 samples, Period: 2025-08-01 00:00:00 to 2025-09-02 00:00:00
+2025-09-24 17:02:24,788 - data_preparation.multi_asset_database.DatabaseManager - INFO - Allocation - Crypto: 70,000, Context: 30,000
+2025-09-24 17:02:24,788 - data_preparation.multi_asset_database.DatabaseManager - INFO - Loading crypto data - target: 70,000
+2025-09-24 17:02:25,638 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_1h: 769 samples (weight: 0.140)
+2025-09-24 17:02:26,099 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_4h: 193 samples (weight: 0.105)
+2025-09-24 17:02:26,887 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_15m: 3,073 samples (weight: 0.084)
+2025-09-24 17:02:27,345 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_1d: 33 samples (weight: 0.070)
+2025-09-24 17:02:27,824 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_30m: 1,537 samples (weight: 0.056)
+2025-09-24 17:02:28,449 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_5m: 4,200 samples (weight: 0.042)
+2025-09-24 17:02:28,839 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_2h: 385 samples (weight: 0.035)
+2025-09-24 17:02:29,299 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_8h: 97 samples (weight: 0.028)
+2025-09-24 17:02:30,455 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ btcusdt_1m: 2,100 samples (weight: 0.021)
+2025-09-24 17:02:31,039 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ orderbook_metrics: 11,899 samples (weight: 0.119)
+2025-09-24 17:02:31,039 - data_preparation.multi_asset_database.DatabaseManager - INFO - Crypto loading complete: 24,286 samples from 10 assets
+2025-09-24 17:02:31,039 - data_preparation.multi_asset_database.DatabaseManager - INFO - Loading context data - target: 30,000
+2025-09-24 17:02:31,039 - data_preparation.multi_asset_database.DatabaseManager - INFO - Loading commodities: 9 assets
+2025-09-24 17:02:31,702 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_brent_daily
+2025-09-24 17:02:31,703 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for brent_daily: 0 samples
+2025-09-24 17:02:32,380 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_wti_daily
+2025-09-24 17:02:32,381 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for wti_daily: 0 samples
+2025-09-24 17:02:32,984 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_natural_gas_daily
+2025-09-24 17:02:32,984 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for natural_gas_daily: 0 samples
+2025-09-24 17:02:33,432 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_copper_daily
+2025-09-24 17:02:33,433 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for copper_daily: 0 samples
+2025-09-24 17:02:33,881 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_aluminum_daily
+2025-09-24 17:02:33,882 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for aluminum_daily: 0 samples
+2025-09-24 17:02:34,330 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_coffee_daily
+2025-09-24 17:02:34,331 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for coffee_daily: 0 samples
+2025-09-24 17:02:34,780 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_corn_daily
+2025-09-24 17:02:34,780 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for corn_daily: 0 samples
+2025-09-24 17:02:35,228 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_wheat_daily
+2025-09-24 17:02:35,229 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for wheat_daily: 0 samples
+2025-09-24 17:02:35,677 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for commodity_sugar_daily
+2025-09-24 17:02:35,677 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for sugar_daily: 0 samples
+2025-09-24 17:02:35,678 - data_preparation.multi_asset_database.DatabaseManager - INFO - Loading economic: 4 assets
+2025-09-24 17:02:36,182 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ dxy_daily: 4,881 samples (weight: 0.025)
+2025-09-24 17:02:36,805 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ vix_daily: 7,500 samples (weight: 0.025)
+2025-09-24 17:02:37,272 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ fedfunds_daily: 851 samples (weight: 0.015)
+2025-09-24 17:02:38,028 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ t10y2y_daily: 3,969 samples (weight: 0.015)
+2025-09-24 17:02:38,028 - data_preparation.multi_asset_database.DatabaseManager - INFO - Loading forex: 5 assets
+2025-09-24 17:02:38,433 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ eur_usd_1min: 2,400 samples (weight: 0.008)
+2025-09-24 17:02:38,836 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ eur_usd_5min: 2,097 samples (weight: 0.007)
+2025-09-24 17:02:39,233 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ eur_usd_15min: 1,515 samples (weight: 0.006)
+2025-09-24 17:02:39,625 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ eur_usd_30min: 770 samples (weight: 0.005)
+2025-09-24 17:02:40,014 - data_preparation.multi_asset_database.DatabaseManager - INFO - ✅ eur_usd_60min: 384 samples (weight: 0.004)
+2025-09-24 17:02:40,014 - data_preparation.multi_asset_database.DatabaseManager - INFO - Loading stocks: 5 assets
+2025-09-24 17:02:40,394 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for stock_aapl_15min
+2025-09-24 17:02:40,394 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for aapl_15min: 0 samples
+2025-09-24 17:02:40,774 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for stock_nvda_15min
+2025-09-24 17:02:40,774 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for nvda_15min: 0 samples
+2025-09-24 17:02:41,154 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for stock_msft_15min
+2025-09-24 17:02:41,154 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for msft_15min: 0 samples
+2025-09-24 17:02:41,534 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for stock_googl_15min
+2025-09-24 17:02:41,534 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for googl_15min: 0 samples
+2025-09-24 17:02:41,914 - data_preparation.multi_asset_database.DatabaseManager - WARNING - No data returned for stock_amzn_15min
+2025-09-24 17:02:41,914 - data_preparation.multi_asset_database.DatabaseManager - WARNING - Insufficient data for amzn_15min: 0 samples
+2025-09-24 17:02:41,914 - data_preparation.multi_asset_database.DatabaseManager - INFO - Context loading complete: 24,367 samples from 9 assets
+2025-09-24 17:02:41,914 - data_preparation.multi_asset_database.DatabaseManager - INFO - Training data loaded successfully:
+2025-09-24 17:02:41,914 - data_preparation.multi_asset_database.DatabaseManager - INFO -   Total samples: 48,653
+2025-09-24 17:02:41,914 - data_preparation.multi_asset_database.DatabaseManager - INFO -   Crypto: 24,286 (49.9%)
+2025-09-24 17:02:41,914 - data_preparation.multi_asset_database.DatabaseManager - INFO -   Context: 24,367 (50.1%)
+2025-09-24 17:02:41,915 - data_preparation.multi_asset_database.DatabaseManager - INFO -   Assets: 19
+2025-09-24 17:02:41,915 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_1h: 769 samples from 2025-08-01 00:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,915 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_4h: 193 samples from 2025-08-01 00:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,915 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_15m: 3,073 samples from 2025-08-01 00:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,915 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_1d: 33 samples from 2025-08-01 00:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,915 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_30m: 1,537 samples from 2025-08-01 00:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,916 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_5m: 4,200 samples from 2025-08-18 10:05:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,916 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_2h: 385 samples from 2025-08-01 00:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,916 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_8h: 97 samples from 2025-08-01 00:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,916 - data_preparation.multi_asset_database.DatabaseManager - INFO -   btcusdt_1m: 2,100 samples from 2025-08-31 13:01:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,916 - data_preparation.multi_asset_database.DatabaseManager - INFO -   orderbook_metrics: 11,899 samples from 2025-08-23 21:00:45.541911+00:00 to 2025-08-23 21:07:43.500156+00:00
+2025-09-24 17:02:41,917 - data_preparation.multi_asset_database.DatabaseManager - INFO -   dxy_daily: 4,881 samples from 2006-01-02 00:00:00 to 2025-06-20 00:00:00
+2025-09-24 17:02:41,917 - data_preparation.multi_asset_database.DatabaseManager - INFO -   vix_daily: 7,500 samples from 1995-10-05 00:00:00 to 2025-06-23 00:00:00
+2025-09-24 17:02:41,917 - data_preparation.multi_asset_database.DatabaseManager - INFO -   fedfunds_daily: 851 samples from 1954-07-01 00:00:00 to 2025-05-01 00:00:00
+2025-09-24 17:02:41,917 - data_preparation.multi_asset_database.DatabaseManager - INFO -   t10y2y_daily: 3,969 samples from 2007-06-29 00:00:00 to 2025-06-23 00:00:00
+2025-09-24 17:02:41,917 - data_preparation.multi_asset_database.DatabaseManager - INFO -   eur_usd_1min: 2,400 samples from 2025-08-18 12:43:00+00:00 to 2025-09-01 23:57:00+00:00
+2025-09-24 17:02:41,917 - data_preparation.multi_asset_database.DatabaseManager - INFO -   eur_usd_5min: 2,097 samples from 2025-08-19 14:40:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,917 - data_preparation.multi_asset_database.DatabaseManager - INFO -   eur_usd_15min: 1,515 samples from 2025-08-08 21:15:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,918 - data_preparation.multi_asset_database.DatabaseManager - INFO -   eur_usd_30min: 770 samples from 2025-08-08 21:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,918 - data_preparation.multi_asset_database.DatabaseManager - INFO -   eur_usd_60min: 384 samples from 2025-08-08 21:00:00+00:00 to 2025-09-02 00:00:00+00:00
+2025-09-24 17:02:41,918 - __main__.FixedDatasetPipeline - INFO - Training data loaded:
+2025-09-24 17:02:41,918 - __main__.FixedDatasetPipeline - INFO -   Total samples: 48,653
+2025-09-24 17:02:41,918 - __main__.FixedDatasetPipeline - INFO -   Crypto samples: 12,387 (25.5%)
+2025-09-24 17:02:41,918 - __main__.FixedDatasetPipeline - INFO -   Context samples: 36,266 (74.5%)
+2025-09-24 17:02:41,918 - __main__.FixedDatasetPipeline - INFO -   Assets loaded: 19
+2025-09-24 17:02:41,918 - __main__.FixedDatasetPipeline - INFO - Step 3: Generating features...
+2025-09-24 17:02:41,918 - __main__.FixedDatasetPipeline - INFO - Generating features...
+2025-09-24 17:02:41,918 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_1h...
+2025-09-24 17:02:41,924 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_1h
+2025-09-24 17:02:41,924 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_4h...
+2025-09-24 17:02:41,929 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_4h
+2025-09-24 17:02:41,929 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_15m...
+2025-09-24 17:02:41,934 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_15m
+2025-09-24 17:02:41,935 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_1d...
+2025-09-24 17:02:41,939 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_1d
+2025-09-24 17:02:41,939 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_30m...
+2025-09-24 17:02:41,945 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_30m
+2025-09-24 17:02:41,945 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_5m...
+2025-09-24 17:02:41,951 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_5m
+2025-09-24 17:02:41,951 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_2h...
+2025-09-24 17:02:41,956 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_2h
+2025-09-24 17:02:41,956 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_8h...
+2025-09-24 17:02:41,961 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_8h
+2025-09-24 17:02:41,961 - data_preparation.feature_pipeline - INFO - Generating features for btcusdt_1m...
+2025-09-24 17:02:41,966 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for btcusdt_1m
+2025-09-24 17:02:41,966 - data_preparation.feature_pipeline - INFO - Generating features for orderbook_metrics...
+2025-09-24 17:02:41,975 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for orderbook_metrics
+2025-09-24 17:02:41,976 - data_preparation.feature_pipeline - INFO - Generating features for dxy_daily...
+2025-09-24 17:02:41,982 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for dxy_daily
+2025-09-24 17:02:41,982 - data_preparation.feature_pipeline - INFO - Generating features for vix_daily...
+2025-09-24 17:02:41,988 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for vix_daily
+2025-09-24 17:02:41,988 - data_preparation.feature_pipeline - INFO - Generating features for fedfunds_daily...
+2025-09-24 17:02:41,993 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for fedfunds_daily
+2025-09-24 17:02:41,993 - data_preparation.feature_pipeline - INFO - Generating features for t10y2y_daily...
+2025-09-24 17:02:41,998 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for t10y2y_daily
+2025-09-24 17:02:41,998 - data_preparation.feature_pipeline - INFO - Generating features for eur_usd_1min...
+2025-09-24 17:02:42,004 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for eur_usd_1min
+2025-09-24 17:02:42,004 - data_preparation.feature_pipeline - INFO - Generating features for eur_usd_5min...
+2025-09-24 17:02:42,009 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for eur_usd_5min
+2025-09-24 17:02:42,009 - data_preparation.feature_pipeline - INFO - Generating features for eur_usd_15min...
+2025-09-24 17:02:42,014 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for eur_usd_15min
+2025-09-24 17:02:42,014 - data_preparation.feature_pipeline - INFO - Generating features for eur_usd_30min...
+2025-09-24 17:02:42,019 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for eur_usd_30min
+2025-09-24 17:02:42,019 - data_preparation.feature_pipeline - INFO - Generating features for eur_usd_60min...
+2025-09-24 17:02:42,023 - __main__.FixedDatasetPipeline - INFO - Generated 17 features for eur_usd_60min
+2025-09-24 17:02:42,023 - __main__.FixedDatasetPipeline - INFO - Features generated for 19 assets
+2025-09-24 17:02:42,023 - __main__.FixedDatasetPipeline - INFO - Step 4: Generating labels with synchronized backtesting...
+2025-09-24 17:02:42,023 - __main__.FixedDatasetPipeline - INFO - Generating labels...
+2025-09-24 17:02:42,023 - __main__.FixedDatasetPipeline - INFO - Using synchronized label pipeline with enhanced backtesting
+2025-09-24 17:02:42,023 - __main__.FixedDatasetPipeline - INFO - Using SynchronizedLabelGenerator directly
+2025-09-24 17:02:42,024 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_1h
+2025-09-24 17:02:42,024 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:02:42,037 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:02:42,037 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for btcusdt_1h
+2025-09-24 17:02:42,038 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 769 samples
+2025-09-24 17:02:42,038 - backtesting.backtest_engine - INFO - Processing 501 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:02:49,086 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:02:49,102 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:02:49,102 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:02:49,102 - backtesting.backtest_engine - INFO -   LONG: 97.8%
+2025-09-24 17:02:49,102 - backtesting.backtest_engine - INFO -   SHORT: 2.2%
+2025-09-24 17:02:49,102 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 501/501 (100.0%)
+2025-09-24 17:02:49,105 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:02:49,105 - backtesting.backtest_engine - INFO -   Total labels: 501
+2025-09-24 17:02:49,105 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:02:49,105 - backtesting.backtest_engine - INFO -   LONG: 490 (97.8%)
+2025-09-24 17:02:49,105 - backtesting.backtest_engine - INFO -   SHORT: 11 (2.2%)
+2025-09-24 17:02:49,105 - backtesting.backtest_engine - INFO -   REAL backtesting used: 501/501 (100.0%)
+2025-09-24 17:02:49,105 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 126
+2025-09-24 17:02:49,106 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:02:49,106 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.656
+2025-09-24 17:02:49,106 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1258
+2025-09-24 17:02:49,106 - backtesting.backtest_engine - INFO -   Min stop loss: 0.005 (analysis req: 0.002)
+2025-09-24 17:02:49,106 - backtesting.backtest_engine - INFO -   Min take profit: 0.006 (analysis req: 0.002)
+2025-09-24 17:02:49,106 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_1h:
+2025-09-24 17:02:49,106 - data_preparation.label_pipeline - INFO -   Generated 501 labels
+2025-09-24 17:02:49,106 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 490, 2: 11}
+2025-09-24 17:02:49,106 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:02:49,107 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1258
+2025-09-24 17:02:49,107 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.656, std=0.218
+2025-09-24 17:02:49,107 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for btcusdt_1h
+2025-09-24 17:02:49,365 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:02:49,408 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:02:49,564 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:02:49,635 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 501 samples with 34 total outputs
+2025-09-24 17:02:49,636 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_1h: 501 samples, 34 outputs, 7.6s
+2025-09-24 17:02:49,636 - data_preparation.label_pipeline - INFO - Final action distribution for btcusdt_1h:
+2025-09-24 17:02:49,636 - data_preparation.label_pipeline - INFO -   LONG: 490 (97.8%)
+2025-09-24 17:02:49,636 - data_preparation.label_pipeline - INFO -   SHORT: 11 (2.2%)
+2025-09-24 17:02:49,636 - __main__.FixedDatasetPipeline - INFO - ✅ btcusdt_1h: Generated 501 synchronized labels
+2025-09-24 17:02:49,636 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_4h
+2025-09-24 17:02:49,637 - data_preparation.label_pipeline - WARNING - Insufficient data for btcusdt_4h: 193 samples
+2025-09-24 17:02:49,637 - __main__.FixedDatasetPipeline - WARNING - ⚠️ btcusdt_4h: No synchronized labels generated
+2025-09-24 17:02:49,637 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_15m
+2025-09-24 17:02:49,637 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:02:49,653 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:02:49,653 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for btcusdt_15m
+2025-09-24 17:02:49,655 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 3073 samples
+2025-09-24 17:02:49,655 - backtesting.backtest_engine - INFO - Processing 2805 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:02:57,894 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:03:05,180 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:03:13,383 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:03:20,980 - backtesting.backtest_engine - INFO - Generated 2000 REAL labels for unknown
+2025-09-24 17:03:29,094 - backtesting.backtest_engine - INFO - Generated 2500 REAL labels for unknown
+2025-09-24 17:03:34,125 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:03:34,125 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:03:34,125 - backtesting.backtest_engine - INFO -   LONG: 99.8%
+2025-09-24 17:03:34,125 - backtesting.backtest_engine - INFO -   SHORT: 0.2%
+2025-09-24 17:03:34,125 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 2805/2805 (100.0%)
+2025-09-24 17:03:34,128 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:03:34,128 - backtesting.backtest_engine - INFO -   Total labels: 2805
+2025-09-24 17:03:34,128 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   LONG: 2799 (99.8%)
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   SHORT: 6 (0.2%)
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   REAL backtesting used: 3306/2805 (117.9%)
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 172
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.482
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1358
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:03:34,129 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:03:34,129 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_15m:
+2025-09-24 17:03:34,129 - data_preparation.label_pipeline - INFO -   Generated 2805 labels
+2025-09-24 17:03:34,130 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 2799, 2: 6}
+2025-09-24 17:03:34,130 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:03:34,130 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1358
+2025-09-24 17:03:34,130 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.482, std=0.114
+2025-09-24 17:03:34,130 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for btcusdt_15m
+2025-09-24 17:03:35,591 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:03:35,635 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:03:36,520 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:03:36,908 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 2805 samples with 34 total outputs
+2025-09-24 17:03:36,909 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_15m: 2805 samples, 34 outputs, 47.3s
+2025-09-24 17:03:36,909 - data_preparation.label_pipeline - INFO - Final action distribution for btcusdt_15m:
+2025-09-24 17:03:36,909 - data_preparation.label_pipeline - INFO -   LONG: 2799 (99.8%)
+2025-09-24 17:03:36,909 - data_preparation.label_pipeline - INFO -   SHORT: 6 (0.2%)
+2025-09-24 17:03:36,909 - __main__.FixedDatasetPipeline - INFO - ✅ btcusdt_15m: Generated 2805 synchronized labels
+2025-09-24 17:03:36,909 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_1d
+2025-09-24 17:03:36,909 - data_preparation.label_pipeline - WARNING - Insufficient data for btcusdt_1d: 33 samples
+2025-09-24 17:03:36,910 - __main__.FixedDatasetPipeline - WARNING - ⚠️ btcusdt_1d: No synchronized labels generated
+2025-09-24 17:03:36,910 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_30m
+2025-09-24 17:03:36,910 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:03:36,924 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:03:36,924 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for btcusdt_30m
+2025-09-24 17:03:36,925 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 1537 samples
+2025-09-24 17:03:36,926 - backtesting.backtest_engine - INFO - Processing 1269 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:03:43,736 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:03:50,640 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:03:54,569 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:03:54,569 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:03:54,570 - backtesting.backtest_engine - INFO -   LONG: 98.6%
+2025-09-24 17:03:54,570 - backtesting.backtest_engine - INFO -   SHORT: 1.4%
+2025-09-24 17:03:54,570 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 1269/1269 (100.0%)
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   Total labels: 1269
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   LONG: 1251 (98.6%)
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   SHORT: 18 (1.4%)
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   REAL backtesting used: 4575/1269 (360.5%)
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 151
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.557
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1285
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:03:54,573 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:03:54,574 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_30m:
+2025-09-24 17:03:54,574 - data_preparation.label_pipeline - INFO -   Generated 1269 labels
+2025-09-24 17:03:54,574 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 1251, 2: 18}
+2025-09-24 17:03:54,574 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:03:54,574 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1285
+2025-09-24 17:03:54,574 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.557, std=0.185
+2025-09-24 17:03:54,574 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for btcusdt_30m
+2025-09-24 17:03:55,224 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:03:55,267 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:03:55,661 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:03:55,837 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 1269 samples with 34 total outputs
+2025-09-24 17:03:55,838 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_30m: 1269 samples, 34 outputs, 18.9s
+2025-09-24 17:03:55,839 - data_preparation.label_pipeline - INFO - Final action distribution for btcusdt_30m:
+2025-09-24 17:03:55,839 - data_preparation.label_pipeline - INFO -   LONG: 1251 (98.6%)
+2025-09-24 17:03:55,839 - data_preparation.label_pipeline - INFO -   SHORT: 18 (1.4%)
+2025-09-24 17:03:55,839 - __main__.FixedDatasetPipeline - INFO - ✅ btcusdt_30m: Generated 1269 synchronized labels
+2025-09-24 17:03:55,839 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_5m
+2025-09-24 17:03:55,839 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:03:55,857 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:03:55,857 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for btcusdt_5m
+2025-09-24 17:03:55,859 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 4200 samples
+2025-09-24 17:03:55,859 - backtesting.backtest_engine - INFO - Processing 3932 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:04:04,130 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:04:12,408 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:04:20,750 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:04:29,002 - backtesting.backtest_engine - INFO - Generated 2000 REAL labels for unknown
+2025-09-24 17:04:37,205 - backtesting.backtest_engine - INFO - Generated 2500 REAL labels for unknown
+2025-09-24 17:04:45,167 - backtesting.backtest_engine - INFO - Generated 3000 REAL labels for unknown
+2025-09-24 17:04:53,429 - backtesting.backtest_engine - INFO - Generated 3500 REAL labels for unknown
+2025-09-24 17:05:00,636 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:05:00,636 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:05:00,636 - backtesting.backtest_engine - INFO -   LONG: 100.0%
+2025-09-24 17:05:00,636 - backtesting.backtest_engine - INFO -   SHORT: 0.0%
+2025-09-24 17:05:00,636 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 3932/3932 (100.0%)
+2025-09-24 17:05:00,639 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   Total labels: 3932
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   LONG: 3931 (100.0%)
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   SHORT: 1 (0.0%)
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   REAL backtesting used: 8507/3932 (216.4%)
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 84
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.460
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1377
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:05:00,640 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:05:00,640 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_5m:
+2025-09-24 17:05:00,640 - data_preparation.label_pipeline - INFO -   Generated 3932 labels
+2025-09-24 17:05:00,641 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 3931, 2: 1}
+2025-09-24 17:05:00,641 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:05:00,641 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1377
+2025-09-24 17:05:00,641 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.460, std=0.065
+2025-09-24 17:05:00,641 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for btcusdt_5m
+2025-09-24 17:05:02,712 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:05:02,755 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:05:04,011 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:05:04,558 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 3932 samples with 34 total outputs
+2025-09-24 17:05:04,559 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_5m: 3932 samples, 34 outputs, 68.7s
+2025-09-24 17:05:04,559 - data_preparation.label_pipeline - INFO - Final action distribution for btcusdt_5m:
+2025-09-24 17:05:04,559 - data_preparation.label_pipeline - INFO -   LONG: 3931 (100.0%)
+2025-09-24 17:05:04,559 - data_preparation.label_pipeline - INFO -   SHORT: 1 (0.0%)
+2025-09-24 17:05:04,559 - __main__.FixedDatasetPipeline - INFO - ✅ btcusdt_5m: Generated 3932 synchronized labels
+2025-09-24 17:05:04,560 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_2h
+2025-09-24 17:05:04,560 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:05:04,573 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:05:04,573 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for btcusdt_2h
+2025-09-24 17:05:04,574 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 385 samples
+2025-09-24 17:05:04,574 - backtesting.backtest_engine - INFO - Processing 117 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:05:06,091 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:05:06,091 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:05:06,092 - backtesting.backtest_engine - INFO -   LONG: 98.3%
+2025-09-24 17:05:06,092 - backtesting.backtest_engine - INFO -   SHORT: 1.7%
+2025-09-24 17:05:06,092 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 117/117 (100.0%)
+2025-09-24 17:05:06,094 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   Total labels: 117
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   LONG: 115 (98.3%)
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   SHORT: 2 (1.7%)
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   REAL backtesting used: 8624/117 (7370.9%)
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 56
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.781
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1260
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   Min stop loss: 0.005 (analysis req: 0.002)
+2025-09-24 17:05:06,095 - backtesting.backtest_engine - INFO -   Min take profit: 0.006 (analysis req: 0.002)
+2025-09-24 17:05:06,095 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_2h:
+2025-09-24 17:05:06,095 - data_preparation.label_pipeline - INFO -   Generated 117 labels
+2025-09-24 17:05:06,096 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 115, 2: 2}
+2025-09-24 17:05:06,096 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:05:06,096 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1260
+2025-09-24 17:05:06,096 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.781, std=0.187
+2025-09-24 17:05:06,096 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for btcusdt_2h
+2025-09-24 17:05:06,155 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:05:06,198 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:05:06,234 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:05:06,251 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 117 samples with 34 total outputs
+2025-09-24 17:05:06,252 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_2h: 117 samples, 34 outputs, 1.7s
+2025-09-24 17:05:06,252 - data_preparation.label_pipeline - INFO - Final action distribution for btcusdt_2h:
+2025-09-24 17:05:06,252 - data_preparation.label_pipeline - INFO -   LONG: 115 (98.3%)
+2025-09-24 17:05:06,252 - data_preparation.label_pipeline - INFO -   SHORT: 2 (1.7%)
+2025-09-24 17:05:06,252 - __main__.FixedDatasetPipeline - INFO - ✅ btcusdt_2h: Generated 117 synchronized labels
+2025-09-24 17:05:06,252 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_8h
+2025-09-24 17:05:06,252 - data_preparation.label_pipeline - WARNING - Insufficient data for btcusdt_8h: 97 samples
+2025-09-24 17:05:06,253 - __main__.FixedDatasetPipeline - WARNING - ⚠️ btcusdt_8h: No synchronized labels generated
+2025-09-24 17:05:06,253 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for btcusdt_1m
+2025-09-24 17:05:06,253 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:05:06,267 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:05:06,267 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for btcusdt_1m
+2025-09-24 17:05:06,268 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 2100 samples
+2025-09-24 17:05:06,269 - backtesting.backtest_engine - INFO - Processing 1832 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:05:14,575 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:05:22,833 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:05:31,123 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:05:36,702 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:05:36,702 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:05:36,702 - backtesting.backtest_engine - INFO -   LONG: 100.0%
+2025-09-24 17:05:36,702 - backtesting.backtest_engine - INFO -   SHORT: 0.0%
+2025-09-24 17:05:36,702 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 1832/1832 (100.0%)
+2025-09-24 17:05:36,707 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:05:36,707 - backtesting.backtest_engine - INFO -   Total labels: 1832
+2025-09-24 17:05:36,707 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:05:36,707 - backtesting.backtest_engine - INFO -   LONG: 1832 (100.0%)
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   SHORT: 0 (0.0%)
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   REAL backtesting used: 10456/1832 (570.7%)
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 0
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.453
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1382
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:05:36,708 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:05:36,708 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_1m:
+2025-09-24 17:05:36,708 - data_preparation.label_pipeline - INFO -   Generated 1832 labels
+2025-09-24 17:05:36,708 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 1832}
+2025-09-24 17:05:36,709 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:05:36,709 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1382
+2025-09-24 17:05:36,709 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.453, std=0.023
+2025-09-24 17:05:36,709 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for btcusdt_1m
+2025-09-24 17:05:37,658 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:05:37,701 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:05:38,275 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:05:38,529 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 1832 samples with 34 total outputs
+2025-09-24 17:05:38,530 - data_preparation.label_pipeline - INFO - REAL backtesting completed for btcusdt_1m: 1832 samples, 34 outputs, 32.3s
+2025-09-24 17:05:38,531 - data_preparation.label_pipeline - INFO - Final action distribution for btcusdt_1m:
+2025-09-24 17:05:38,531 - data_preparation.label_pipeline - INFO -   LONG: 1832 (100.0%)
+2025-09-24 17:05:38,531 - __main__.FixedDatasetPipeline - INFO - ✅ btcusdt_1m: Generated 1832 synchronized labels
+2025-09-24 17:05:38,531 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for orderbook_metrics
+2025-09-24 17:05:38,531 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:05:38,556 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:05:38,556 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for orderbook_metrics
+2025-09-24 17:05:38,562 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 11899 samples
+2025-09-24 17:05:38,562 - backtesting.backtest_engine - INFO - Processing 11631 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:05:52,549 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:06:06,519 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:06:20,509 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:06:34,495 - backtesting.backtest_engine - INFO - Generated 2000 REAL labels for unknown
+2025-09-24 17:06:48,555 - backtesting.backtest_engine - INFO - Generated 2500 REAL labels for unknown
+2025-09-24 17:07:02,585 - backtesting.backtest_engine - INFO - Generated 3000 REAL labels for unknown
+2025-09-24 17:07:16,642 - backtesting.backtest_engine - INFO - Generated 3500 REAL labels for unknown
+2025-09-24 17:07:30,664 - backtesting.backtest_engine - INFO - Generated 4000 REAL labels for unknown
+2025-09-24 17:07:44,728 - backtesting.backtest_engine - INFO - Generated 4500 REAL labels for unknown
+2025-09-24 17:07:58,723 - backtesting.backtest_engine - INFO - Generated 5000 REAL labels for unknown
+2025-09-24 17:08:12,793 - backtesting.backtest_engine - INFO - Generated 5500 REAL labels for unknown
+2025-09-24 17:08:26,878 - backtesting.backtest_engine - INFO - Generated 6000 REAL labels for unknown
+2025-09-24 17:08:40,921 - backtesting.backtest_engine - INFO - Generated 6500 REAL labels for unknown
+2025-09-24 17:08:55,084 - backtesting.backtest_engine - INFO - Generated 7000 REAL labels for unknown
+2025-09-24 17:09:09,146 - backtesting.backtest_engine - INFO - Generated 7500 REAL labels for unknown
+2025-09-24 17:09:23,364 - backtesting.backtest_engine - INFO - Generated 8000 REAL labels for unknown
+2025-09-24 17:09:37,456 - backtesting.backtest_engine - INFO - Generated 8500 REAL labels for unknown
+2025-09-24 17:09:51,655 - backtesting.backtest_engine - INFO - Generated 9000 REAL labels for unknown
+2025-09-24 17:10:05,770 - backtesting.backtest_engine - INFO - Generated 9500 REAL labels for unknown
+2025-09-24 17:10:19,977 - backtesting.backtest_engine - INFO - Generated 10000 REAL labels for unknown
+2025-09-24 17:10:34,138 - backtesting.backtest_engine - INFO - Generated 10500 REAL labels for unknown
+2025-09-24 17:10:48,352 - backtesting.backtest_engine - INFO - Generated 11000 REAL labels for unknown
+2025-09-24 17:11:02,489 - backtesting.backtest_engine - INFO - Generated 11500 REAL labels for unknown
+2025-09-24 17:11:06,219 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:11:06,219 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:11:06,219 - backtesting.backtest_engine - INFO -   LONG: 64.4%
+2025-09-24 17:11:06,219 - backtesting.backtest_engine - INFO -   SHORT: 35.6%
+2025-09-24 17:11:06,220 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 11631/11631 (100.0%)
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   Total labels: 11631
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   LONG: 7491 (64.4%)
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   SHORT: 4140 (35.6%)
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   REAL backtesting used: 22087/11631 (189.9%)
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 4176
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:11:06,223 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.784
+2025-09-24 17:11:06,224 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 3234
+2025-09-24 17:11:06,224 - backtesting.backtest_engine - INFO -   Min stop loss: 0.005 (analysis req: 0.002)
+2025-09-24 17:11:06,224 - backtesting.backtest_engine - INFO -   Min take profit: 0.007 (analysis req: 0.002)
+2025-09-24 17:11:06,224 - data_preparation.label_pipeline - INFO - REAL backtesting completed for orderbook_metrics:
+2025-09-24 17:11:06,224 - data_preparation.label_pipeline - INFO -   Generated 11631 labels
+2025-09-24 17:11:06,224 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 7491, 2: 4140}
+2025-09-24 17:11:06,224 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:11:06,225 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 3234
+2025-09-24 17:11:06,225 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.784, std=0.195
+2025-09-24 17:11:06,225 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for orderbook_metrics
+2025-09-24 17:11:12,682 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:11:12,725 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:11:16,606 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:11:18,214 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 11631 samples with 34 total outputs
+2025-09-24 17:11:18,215 - data_preparation.label_pipeline - INFO - REAL backtesting completed for orderbook_metrics: 11631 samples, 34 outputs, 339.7s
+2025-09-24 17:11:18,215 - data_preparation.label_pipeline - INFO - Final action distribution for orderbook_metrics:
+2025-09-24 17:11:18,215 - data_preparation.label_pipeline - INFO -   LONG: 7491 (64.4%)
+2025-09-24 17:11:18,215 - data_preparation.label_pipeline - INFO -   SHORT: 4140 (35.6%)
+2025-09-24 17:11:18,216 - __main__.FixedDatasetPipeline - INFO - ✅ orderbook_metrics: Generated 11631 synchronized labels
+2025-09-24 17:11:18,216 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for dxy_daily
+2025-09-24 17:11:18,216 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:11:18,233 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:11:18,233 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for dxy_daily
+2025-09-24 17:11:18,235 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 4881 samples
+2025-09-24 17:11:18,235 - backtesting.backtest_engine - INFO - Processing 4613 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:11:24,706 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:11:31,208 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:11:38,117 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:11:44,606 - backtesting.backtest_engine - INFO - Generated 2000 REAL labels for unknown
+2025-09-24 17:11:51,068 - backtesting.backtest_engine - INFO - Generated 2500 REAL labels for unknown
+2025-09-24 17:11:58,146 - backtesting.backtest_engine - INFO - Generated 3000 REAL labels for unknown
+2025-09-24 17:12:04,900 - backtesting.backtest_engine - INFO - Generated 3500 REAL labels for unknown
+2025-09-24 17:12:11,371 - backtesting.backtest_engine - INFO - Generated 4000 REAL labels for unknown
+2025-09-24 17:12:18,699 - backtesting.backtest_engine - INFO - Generated 4500 REAL labels for unknown
+2025-09-24 17:12:20,569 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:12:20,570 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:12:20,570 - backtesting.backtest_engine - INFO -   LONG: 96.0%
+2025-09-24 17:12:20,570 - backtesting.backtest_engine - INFO -   SHORT: 4.0%
+2025-09-24 17:12:20,570 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 4613/4613 (100.0%)
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO -   Total labels: 4613
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO -   LONG: 4428 (96.0%)
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO -   SHORT: 185 (4.0%)
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO -   REAL backtesting used: 26700/4613 (578.8%)
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 1212
+2025-09-24 17:12:20,573 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:12:20,574 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.645
+2025-09-24 17:12:20,574 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1298
+2025-09-24 17:12:20,574 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:12:20,574 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:12:20,574 - data_preparation.label_pipeline - INFO - REAL backtesting completed for dxy_daily:
+2025-09-24 17:12:20,574 - data_preparation.label_pipeline - INFO -   Generated 4613 labels
+2025-09-24 17:12:20,574 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 4428, 2: 185}
+2025-09-24 17:12:20,574 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:12:20,574 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1298
+2025-09-24 17:12:20,575 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.645, std=0.220
+2025-09-24 17:12:20,575 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for dxy_daily
+2025-09-24 17:12:23,009 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:12:23,051 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:12:24,515 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:12:25,152 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 4613 samples with 34 total outputs
+2025-09-24 17:12:25,153 - data_preparation.label_pipeline - INFO - REAL backtesting completed for dxy_daily: 4613 samples, 34 outputs, 66.9s
+2025-09-24 17:12:25,154 - data_preparation.label_pipeline - INFO - Final action distribution for dxy_daily:
+2025-09-24 17:12:25,154 - data_preparation.label_pipeline - INFO -   LONG: 4428 (96.0%)
+2025-09-24 17:12:25,154 - data_preparation.label_pipeline - INFO -   SHORT: 185 (4.0%)
+2025-09-24 17:12:25,154 - __main__.FixedDatasetPipeline - INFO - ✅ dxy_daily: Generated 4613 synchronized labels
+2025-09-24 17:12:25,154 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for vix_daily
+2025-09-24 17:12:25,154 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:12:25,173 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:12:25,173 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for vix_daily
+2025-09-24 17:12:25,175 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 7500 samples
+2025-09-24 17:12:25,176 - backtesting.backtest_engine - INFO - Processing 7232 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:12:39,203 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:12:53,140 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:13:07,108 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:13:21,252 - backtesting.backtest_engine - INFO - Generated 2000 REAL labels for unknown
+2025-09-24 17:13:35,493 - backtesting.backtest_engine - INFO - Generated 2500 REAL labels for unknown
+2025-09-24 17:13:49,846 - backtesting.backtest_engine - INFO - Generated 3000 REAL labels for unknown
+2025-09-24 17:14:04,213 - backtesting.backtest_engine - INFO - Generated 3500 REAL labels for unknown
+2025-09-24 17:14:18,725 - backtesting.backtest_engine - INFO - Generated 4000 REAL labels for unknown
+2025-09-24 17:14:33,123 - backtesting.backtest_engine - INFO - Generated 4500 REAL labels for unknown
+2025-09-24 17:14:47,606 - backtesting.backtest_engine - INFO - Generated 5000 REAL labels for unknown
+2025-09-24 17:15:01,983 - backtesting.backtest_engine - INFO - Generated 5500 REAL labels for unknown
+2025-09-24 17:15:16,424 - backtesting.backtest_engine - INFO - Generated 6000 REAL labels for unknown
+2025-09-24 17:15:30,844 - backtesting.backtest_engine - INFO - Generated 6500 REAL labels for unknown
+2025-09-24 17:15:45,346 - backtesting.backtest_engine - INFO - Generated 7000 REAL labels for unknown
+2025-09-24 17:15:52,163 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:15:52,163 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:15:52,163 - backtesting.backtest_engine - INFO -   LONG: 68.7%
+2025-09-24 17:15:52,163 - backtesting.backtest_engine - INFO -   SHORT: 31.3%
+2025-09-24 17:15:52,164 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 7232/7232 (100.0%)
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   Total labels: 7232
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   LONG: 4969 (68.7%)
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   SHORT: 2263 (31.3%)
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   REAL backtesting used: 33932/7232 (469.2%)
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 4230
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:15:52,167 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.892
+2025-09-24 17:15:52,168 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 3226
+2025-09-24 17:15:52,168 - backtesting.backtest_engine - INFO -   Min stop loss: 0.005 (analysis req: 0.002)
+2025-09-24 17:15:52,168 - backtesting.backtest_engine - INFO -   Min take profit: 0.007 (analysis req: 0.002)
+2025-09-24 17:15:52,168 - data_preparation.label_pipeline - INFO - REAL backtesting completed for vix_daily:
+2025-09-24 17:15:52,168 - data_preparation.label_pipeline - INFO -   Generated 7232 labels
+2025-09-24 17:15:52,168 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 4969, 2: 2263}
+2025-09-24 17:15:52,168 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:15:52,168 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 3226
+2025-09-24 17:15:52,169 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.892, std=0.056
+2025-09-24 17:15:52,169 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for vix_daily
+2025-09-24 17:15:56,015 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:15:56,058 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:15:58,392 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:15:59,392 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 7232 samples with 34 total outputs
+2025-09-24 17:15:59,393 - data_preparation.label_pipeline - INFO - REAL backtesting completed for vix_daily: 7232 samples, 34 outputs, 214.2s
+2025-09-24 17:15:59,393 - data_preparation.label_pipeline - INFO - Final action distribution for vix_daily:
+2025-09-24 17:15:59,393 - data_preparation.label_pipeline - INFO -   LONG: 4969 (68.7%)
+2025-09-24 17:15:59,393 - data_preparation.label_pipeline - INFO -   SHORT: 2263 (31.3%)
+2025-09-24 17:15:59,393 - __main__.FixedDatasetPipeline - INFO - ✅ vix_daily: Generated 7232 synchronized labels
+2025-09-24 17:15:59,393 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for fedfunds_daily
+2025-09-24 17:15:59,393 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:15:59,407 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:15:59,408 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for fedfunds_daily
+2025-09-24 17:15:59,408 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 851 samples
+2025-09-24 17:15:59,409 - backtesting.backtest_engine - INFO - Processing 583 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:16:13,689 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:16:16,077 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:16:16,077 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:16:16,077 - backtesting.backtest_engine - INFO -   LONG: 64.0%
+2025-09-24 17:16:16,077 - backtesting.backtest_engine - INFO -   SHORT: 36.0%
+2025-09-24 17:16:16,077 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 583/583 (100.0%)
+2025-09-24 17:16:16,080 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:16:16,080 - backtesting.backtest_engine - INFO -   Total labels: 583
+2025-09-24 17:16:16,080 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:16:16,080 - backtesting.backtest_engine - INFO -   LONG: 373 (64.0%)
+2025-09-24 17:16:16,080 - backtesting.backtest_engine - INFO -   SHORT: 210 (36.0%)
+2025-09-24 17:16:16,080 - backtesting.backtest_engine - INFO -   REAL backtesting used: 34515/583 (5920.2%)
+2025-09-24 17:16:16,080 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 328
+2025-09-24 17:16:16,081 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:16:16,081 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.861
+2025-09-24 17:16:16,081 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 3228
+2025-09-24 17:16:16,081 - backtesting.backtest_engine - INFO -   Min stop loss: 0.005 (analysis req: 0.002)
+2025-09-24 17:16:16,081 - backtesting.backtest_engine - INFO -   Min take profit: 0.007 (analysis req: 0.002)
+2025-09-24 17:16:16,081 - data_preparation.label_pipeline - INFO - REAL backtesting completed for fedfunds_daily:
+2025-09-24 17:16:16,081 - data_preparation.label_pipeline - INFO -   Generated 583 labels
+2025-09-24 17:16:16,081 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 373, 2: 210}
+2025-09-24 17:16:16,081 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:16:16,082 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 3228
+2025-09-24 17:16:16,082 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.861, std=0.124
+2025-09-24 17:16:16,082 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for fedfunds_daily
+2025-09-24 17:16:16,381 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:16:16,424 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:16:16,604 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:16:16,686 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 583 samples with 34 total outputs
+2025-09-24 17:16:16,687 - data_preparation.label_pipeline - INFO - REAL backtesting completed for fedfunds_daily: 583 samples, 34 outputs, 17.3s
+2025-09-24 17:16:16,687 - data_preparation.label_pipeline - INFO - Final action distribution for fedfunds_daily:
+2025-09-24 17:16:16,687 - data_preparation.label_pipeline - INFO -   LONG: 373 (64.0%)
+2025-09-24 17:16:16,687 - data_preparation.label_pipeline - INFO -   SHORT: 210 (36.0%)
+2025-09-24 17:16:16,687 - __main__.FixedDatasetPipeline - INFO - ✅ fedfunds_daily: Generated 583 synchronized labels
+2025-09-24 17:16:16,688 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for t10y2y_daily
+2025-09-24 17:16:16,688 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:16:16,704 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:16:16,704 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for t10y2y_daily
+2025-09-24 17:16:16,706 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 3969 samples
+2025-09-24 17:16:16,706 - backtesting.backtest_engine - INFO - Processing 3701 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:16:29,401 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:16:42,171 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:16:56,506 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:17:10,783 - backtesting.backtest_engine - INFO - Generated 2000 REAL labels for unknown
+2025-09-24 17:17:25,092 - backtesting.backtest_engine - INFO - Generated 2500 REAL labels for unknown
+2025-09-24 17:17:39,455 - backtesting.backtest_engine - INFO - Generated 3000 REAL labels for unknown
+2025-09-24 17:17:53,860 - backtesting.backtest_engine - INFO - Generated 3500 REAL labels for unknown
+2025-09-24 17:17:59,650 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:17:59,650 - backtesting.backtest_engine - INFO -   WAIT: 0.2%
+2025-09-24 17:17:59,650 - backtesting.backtest_engine - INFO -   LONG: 74.3%
+2025-09-24 17:17:59,650 - backtesting.backtest_engine - INFO -   SHORT: 25.5%
+2025-09-24 17:17:59,651 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 3694/3701 (99.8%)
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   Total labels: 3701
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   WAIT: 7 (0.2%)
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   LONG: 2750 (74.3%)
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   SHORT: 944 (25.5%)
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   REAL backtesting used: 38209/3701 (1032.4%)
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 2173
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.873
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 3143
+2025-09-24 17:17:59,654 - backtesting.backtest_engine - INFO -   Min stop loss: 0.002 (analysis req: 0.002)
+2025-09-24 17:17:59,655 - backtesting.backtest_engine - INFO -   Min take profit: 0.003 (analysis req: 0.002)
+2025-09-24 17:17:59,655 - data_preparation.label_pipeline - INFO - REAL backtesting completed for t10y2y_daily:
+2025-09-24 17:17:59,655 - data_preparation.label_pipeline - INFO -   Generated 3701 labels
+2025-09-24 17:17:59,655 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 2750, 2: 944, 0: 7}
+2025-09-24 17:17:59,655 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 99.8%
+2025-09-24 17:17:59,655 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 3143
+2025-09-24 17:17:59,655 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.873, std=0.103
+2025-09-24 17:17:59,655 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for t10y2y_daily
+2025-09-24 17:18:01,600 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:18:01,643 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:18:02,803 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:18:03,315 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 3701 samples with 34 total outputs
+2025-09-24 17:18:03,316 - data_preparation.label_pipeline - INFO - REAL backtesting completed for t10y2y_daily: 3701 samples, 34 outputs, 106.6s
+2025-09-24 17:18:03,316 - data_preparation.label_pipeline - INFO - Final action distribution for t10y2y_daily:
+2025-09-24 17:18:03,317 - data_preparation.label_pipeline - INFO -   LONG: 2750 (74.3%)
+2025-09-24 17:18:03,317 - data_preparation.label_pipeline - INFO -   SHORT: 944 (25.5%)
+2025-09-24 17:18:03,317 - data_preparation.label_pipeline - INFO -   WAIT: 7 (0.2%)
+2025-09-24 17:18:03,317 - __main__.FixedDatasetPipeline - INFO - ✅ t10y2y_daily: Generated 3701 synchronized labels
+2025-09-24 17:18:03,317 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for eur_usd_1min
+2025-09-24 17:18:03,317 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:18:03,332 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:18:03,332 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for eur_usd_1min
+2025-09-24 17:18:03,333 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 2400 samples
+2025-09-24 17:18:03,334 - backtesting.backtest_engine - INFO - Processing 2132 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:18:11,911 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:18:20,406 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:18:28,893 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:18:37,406 - backtesting.backtest_engine - INFO - Generated 2000 REAL labels for unknown
+2025-09-24 17:18:39,658 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:18:39,658 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:18:39,658 - backtesting.backtest_engine - INFO -   LONG: 100.0%
+2025-09-24 17:18:39,658 - backtesting.backtest_engine - INFO -   SHORT: 0.0%
+2025-09-24 17:18:39,658 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 2132/2132 (100.0%)
+2025-09-24 17:18:39,661 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:18:39,661 - backtesting.backtest_engine - INFO -   Total labels: 2132
+2025-09-24 17:18:39,661 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:18:39,661 - backtesting.backtest_engine - INFO -   LONG: 2131 (100.0%)
+2025-09-24 17:18:39,661 - backtesting.backtest_engine - INFO -   SHORT: 1 (0.0%)
+2025-09-24 17:18:39,662 - backtesting.backtest_engine - INFO -   REAL backtesting used: 40341/2132 (1892.2%)
+2025-09-24 17:18:39,662 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 1
+2025-09-24 17:18:39,662 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:18:39,662 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.453
+2025-09-24 17:18:39,662 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1384
+2025-09-24 17:18:39,662 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:18:39,662 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:18:39,662 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_1min:
+2025-09-24 17:18:39,662 - data_preparation.label_pipeline - INFO -   Generated 2132 labels
+2025-09-24 17:18:39,662 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 2131, 2: 1}
+2025-09-24 17:18:39,663 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:18:39,663 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1384
+2025-09-24 17:18:39,663 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.453, std=0.017
+2025-09-24 17:18:39,663 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for eur_usd_1min
+2025-09-24 17:18:40,764 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:18:40,807 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:18:41,472 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:18:41,769 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 2132 samples with 34 total outputs
+2025-09-24 17:18:41,770 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_1min: 2132 samples, 34 outputs, 38.5s
+2025-09-24 17:18:41,770 - data_preparation.label_pipeline - INFO - Final action distribution for eur_usd_1min:
+2025-09-24 17:18:41,770 - data_preparation.label_pipeline - INFO -   LONG: 2131 (100.0%)
+2025-09-24 17:18:41,770 - data_preparation.label_pipeline - INFO -   SHORT: 1 (0.0%)
+2025-09-24 17:18:41,770 - __main__.FixedDatasetPipeline - INFO - ✅ eur_usd_1min: Generated 2132 synchronized labels
+2025-09-24 17:18:41,770 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for eur_usd_5min
+2025-09-24 17:18:41,770 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:18:41,785 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:18:41,785 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for eur_usd_5min
+2025-09-24 17:18:41,786 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 2097 samples
+2025-09-24 17:18:41,787 - backtesting.backtest_engine - INFO - Processing 1829 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:18:50,549 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:18:59,298 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:19:07,890 - backtesting.backtest_engine - INFO - Generated 1500 REAL labels for unknown
+2025-09-24 17:19:13,582 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:19:13,582 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:19:13,583 - backtesting.backtest_engine - INFO -   LONG: 99.9%
+2025-09-24 17:19:13,583 - backtesting.backtest_engine - INFO -   SHORT: 0.1%
+2025-09-24 17:19:13,583 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 1829/1829 (100.0%)
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   Total labels: 1829
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   LONG: 1828 (99.9%)
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   SHORT: 1 (0.1%)
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   REAL backtesting used: 42170/1829 (2305.6%)
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 1
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.453
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1383
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:13,586 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:13,587 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_5min:
+2025-09-24 17:19:13,587 - data_preparation.label_pipeline - INFO -   Generated 1829 labels
+2025-09-24 17:19:13,587 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 1828, 2: 1}
+2025-09-24 17:19:13,587 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:19:13,587 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1383
+2025-09-24 17:19:13,587 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.453, std=0.017
+2025-09-24 17:19:13,587 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for eur_usd_5min
+2025-09-24 17:19:14,526 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:19:14,569 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:19:15,134 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:19:15,387 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 1829 samples with 34 total outputs
+2025-09-24 17:19:15,388 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_5min: 1829 samples, 34 outputs, 33.6s
+2025-09-24 17:19:15,388 - data_preparation.label_pipeline - INFO - Final action distribution for eur_usd_5min:
+2025-09-24 17:19:15,388 - data_preparation.label_pipeline - INFO -   LONG: 1828 (99.9%)
+2025-09-24 17:19:15,388 - data_preparation.label_pipeline - INFO -   SHORT: 1 (0.1%)
+2025-09-24 17:19:15,388 - __main__.FixedDatasetPipeline - INFO - ✅ eur_usd_5min: Generated 1829 synchronized labels
+2025-09-24 17:19:15,388 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for eur_usd_15min
+2025-09-24 17:19:15,388 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:19:15,403 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:19:15,403 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for eur_usd_15min
+2025-09-24 17:19:15,404 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 1515 samples
+2025-09-24 17:19:15,404 - backtesting.backtest_engine - INFO - Processing 1247 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:19:23,994 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:19:32,638 - backtesting.backtest_engine - INFO - Generated 1000 REAL labels for unknown
+2025-09-24 17:19:36,882 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:19:36,882 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:19:36,882 - backtesting.backtest_engine - INFO -   LONG: 99.9%
+2025-09-24 17:19:36,882 - backtesting.backtest_engine - INFO -   SHORT: 0.1%
+2025-09-24 17:19:36,882 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 1247/1247 (100.0%)
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   Total labels: 1247
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   LONG: 1246 (99.9%)
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   SHORT: 1 (0.1%)
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   REAL backtesting used: 43417/1247 (3481.7%)
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 1
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:19:36,885 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.453
+2025-09-24 17:19:36,886 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1380
+2025-09-24 17:19:36,886 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:36,886 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:36,886 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_15min:
+2025-09-24 17:19:36,886 - data_preparation.label_pipeline - INFO -   Generated 1247 labels
+2025-09-24 17:19:36,886 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 1246, 2: 1}
+2025-09-24 17:19:36,886 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:19:36,886 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1380
+2025-09-24 17:19:36,886 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.453, std=0.023
+2025-09-24 17:19:36,887 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for eur_usd_15min
+2025-09-24 17:19:37,526 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:19:37,568 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:19:37,954 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:19:38,127 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 1247 samples with 34 total outputs
+2025-09-24 17:19:38,128 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_15min: 1247 samples, 34 outputs, 22.7s
+2025-09-24 17:19:38,128 - data_preparation.label_pipeline - INFO - Final action distribution for eur_usd_15min:
+2025-09-24 17:19:38,128 - data_preparation.label_pipeline - INFO -   LONG: 1246 (99.9%)
+2025-09-24 17:19:38,128 - data_preparation.label_pipeline - INFO -   SHORT: 1 (0.1%)
+2025-09-24 17:19:38,129 - __main__.FixedDatasetPipeline - INFO - ✅ eur_usd_15min: Generated 1247 synchronized labels
+2025-09-24 17:19:38,129 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for eur_usd_30min
+2025-09-24 17:19:38,129 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:19:38,143 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:19:38,143 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for eur_usd_30min
+2025-09-24 17:19:38,144 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 770 samples
+2025-09-24 17:19:38,144 - backtesting.backtest_engine - INFO - Processing 502 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:19:46,764 - backtesting.backtest_engine - INFO - Generated 500 REAL labels for unknown
+2025-09-24 17:19:46,801 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:19:46,801 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:19:46,801 - backtesting.backtest_engine - INFO -   LONG: 99.8%
+2025-09-24 17:19:46,801 - backtesting.backtest_engine - INFO -   SHORT: 0.2%
+2025-09-24 17:19:46,802 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 502/502 (100.0%)
+2025-09-24 17:19:46,804 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   Total labels: 502
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   LONG: 501 (99.8%)
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   SHORT: 1 (0.2%)
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   REAL backtesting used: 43919/502 (8748.8%)
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 2
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.455
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1379
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:46,805 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:46,805 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_30min:
+2025-09-24 17:19:46,805 - data_preparation.label_pipeline - INFO -   Generated 502 labels
+2025-09-24 17:19:46,806 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 501, 2: 1}
+2025-09-24 17:19:46,806 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:19:46,806 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1379
+2025-09-24 17:19:46,806 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.455, std=0.036
+2025-09-24 17:19:46,806 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for eur_usd_30min
+2025-09-24 17:19:47,064 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:19:47,107 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:19:47,263 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:19:47,334 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 502 samples with 34 total outputs
+2025-09-24 17:19:47,335 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_30min: 502 samples, 34 outputs, 9.2s
+2025-09-24 17:19:47,335 - data_preparation.label_pipeline - INFO - Final action distribution for eur_usd_30min:
+2025-09-24 17:19:47,335 - data_preparation.label_pipeline - INFO -   LONG: 501 (99.8%)
+2025-09-24 17:19:47,335 - data_preparation.label_pipeline - INFO -   SHORT: 1 (0.2%)
+2025-09-24 17:19:47,335 - __main__.FixedDatasetPipeline - INFO - ✅ eur_usd_30min: Generated 502 synchronized labels
+2025-09-24 17:19:47,335 - data_preparation.label_pipeline - INFO - Generating REAL backtesting labels for eur_usd_60min
+2025-09-24 17:19:47,335 - data_preparation.label_pipeline - INFO - Step 1: Calculating technical indicators...
+2025-09-24 17:19:47,349 - data_preparation.label_pipeline - INFO - Step 2: Running REAL backtesting with strategy combinations...
+2025-09-24 17:19:47,349 - data_preparation.label_pipeline - INFO - Running REAL backtesting with 64,000+ combinations for eur_usd_60min
+2025-09-24 17:19:47,350 - backtesting.backtest_engine - INFO - Generating REAL integrated labels for unknown with 384 samples
+2025-09-24 17:19:47,350 - backtesting.backtest_engine - INFO - Processing 116 timestamps with REAL analysis-compliant backtesting
+2025-09-24 17:19:49,339 - backtesting.backtest_engine - INFO - REAL backtesting distribution (no artificial changes):
+2025-09-24 17:19:49,339 - backtesting.backtest_engine - INFO -   WAIT: 0.0%
+2025-09-24 17:19:49,339 - backtesting.backtest_engine - INFO -   LONG: 100.0%
+2025-09-24 17:19:49,340 - backtesting.backtest_engine - INFO -   SHORT: 0.0%
+2025-09-24 17:19:49,340 - backtesting.backtest_engine - INFO -   Timestamps with REAL backtesting: 116/116 (100.0%)
+2025-09-24 17:19:49,342 - backtesting.backtest_engine - INFO - REAL label generation completed for unknown:
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   Total labels: 116
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   WAIT: 0 (0.0%)
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   LONG: 116 (100.0%)
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   SHORT: 0 (0.0%)
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   REAL backtesting used: 44035/116 (37961.2%)
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   Min viable targets enforced: 1
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   ATR scaling applied: 0
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   Average REAL confidence: 0.455
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   Average strategies tested per timestamp: 1380
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   Min stop loss: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:49,343 - backtesting.backtest_engine - INFO -   Min take profit: 0.004 (analysis req: 0.002)
+2025-09-24 17:19:49,343 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_60min:
+2025-09-24 17:19:49,343 - data_preparation.label_pipeline - INFO -   Generated 116 labels
+2025-09-24 17:19:49,344 - data_preparation.label_pipeline - INFO -   Action distribution: {1: 116}
+2025-09-24 17:19:49,344 - data_preparation.label_pipeline - INFO -   Non-WAIT signals: 100.0%
+2025-09-24 17:19:49,344 - data_preparation.label_pipeline - INFO -   Avg strategies tested per timestamp: 1380
+2025-09-24 17:19:49,344 - data_preparation.label_pipeline - INFO -   Confidence: avg=0.455, std=0.054
+2025-09-24 17:19:49,344 - data_preparation.label_pipeline - INFO - Enhancing real backtesting results with regime and risk analysis for eur_usd_60min
+2025-09-24 17:19:49,404 - data_preparation.label_pipeline - INFO - Adding risk assessment...
+2025-09-24 17:19:49,446 - data_preparation.label_pipeline - INFO - Adding execution cost predictions...
+2025-09-24 17:19:49,482 - data_preparation.label_pipeline - INFO - Adding timing optimization...
+2025-09-24 17:19:49,498 - data_preparation.label_pipeline - INFO - Enhanced backtesting results: 116 samples with 34 total outputs
+2025-09-24 17:19:49,499 - data_preparation.label_pipeline - INFO - REAL backtesting completed for eur_usd_60min: 116 samples, 34 outputs, 2.2s
+2025-09-24 17:19:49,499 - data_preparation.label_pipeline - INFO - Final action distribution for eur_usd_60min:
+2025-09-24 17:19:49,500 - data_preparation.label_pipeline - INFO -   LONG: 116 (100.0%)
+2025-09-24 17:19:49,500 - __main__.FixedDatasetPipeline - INFO - ✅ eur_usd_60min: Generated 116 synchronized labels
+2025-09-24 17:19:49,500 - __main__.FixedDatasetPipeline - INFO -   btcusdt_1h: 501 labels, actions: {1: 490, 2: 11}
+2025-09-24 17:19:49,500 - __main__.FixedDatasetPipeline - INFO -   btcusdt_15m: 2805 labels, actions: {1: 2799, 2: 6}
+2025-09-24 17:19:49,500 - __main__.FixedDatasetPipeline - INFO -   btcusdt_30m: 1269 labels, actions: {1: 1251, 2: 18}
+2025-09-24 17:19:49,501 - __main__.FixedDatasetPipeline - INFO -   btcusdt_5m: 3932 labels, actions: {1: 3931, 2: 1}
+2025-09-24 17:19:49,501 - __main__.FixedDatasetPipeline - INFO -   btcusdt_2h: 117 labels, actions: {1: 115, 2: 2}
+2025-09-24 17:19:49,501 - __main__.FixedDatasetPipeline - INFO -   btcusdt_1m: 1832 labels, actions: {1: 1832}
+2025-09-24 17:19:49,501 - __main__.FixedDatasetPipeline - INFO -   orderbook_metrics: 11631 labels, actions: {1: 7491, 2: 4140}
+2025-09-24 17:19:49,501 - __main__.FixedDatasetPipeline - INFO -   dxy_daily: 4613 labels, actions: {1: 4428, 2: 185}
+2025-09-24 17:19:49,502 - __main__.FixedDatasetPipeline - INFO -   vix_daily: 7232 labels, actions: {1: 4969, 2: 2263}
+2025-09-24 17:19:49,502 - __main__.FixedDatasetPipeline - INFO -   fedfunds_daily: 583 labels, actions: {1: 373, 2: 210}
+2025-09-24 17:19:49,502 - __main__.FixedDatasetPipeline - INFO -   t10y2y_daily: 3701 labels, actions: {1: 2750, 2: 944, 0: 7}
+2025-09-24 17:19:49,502 - __main__.FixedDatasetPipeline - INFO -   eur_usd_1min: 2132 labels, actions: {1: 2131, 2: 1}
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO -   eur_usd_5min: 1829 labels, actions: {1: 1828, 2: 1}
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO -   eur_usd_15min: 1247 labels, actions: {1: 1246, 2: 1}
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO -   eur_usd_30min: 502 labels, actions: {1: 501, 2: 1}
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO -   eur_usd_60min: 116 labels, actions: {1: 116}
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO - Label generation completed for 16 assets
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO - Total label samples generated: 44,042
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO - Step 5: Saving processed datasets...
+2025-09-24 17:19:49,503 - __main__.FixedDatasetPipeline - INFO - Saving datasets...
+2025-09-24 17:19:49,541 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_30m: Saved 1537 feature samples
+2025-09-24 17:19:49,564 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_30m: Saved 1269 label samples
+2025-09-24 17:19:49,583 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_30min: Saved 770 feature samples
+2025-09-24 17:19:49,591 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_30min: Saved 502 label samples
+2025-09-24 17:19:49,669 - __main__.FixedDatasetPipeline - INFO -   ✅ t10y2y_daily: Saved 3969 feature samples
+2025-09-24 17:19:49,732 - __main__.FixedDatasetPipeline - INFO -   ✅ t10y2y_daily: Saved 3701 label samples
+2025-09-24 17:19:49,768 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_15min: Saved 1515 feature samples
+2025-09-24 17:19:49,788 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_15min: Saved 1247 label samples
+2025-09-24 17:19:49,792 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_8h: Saved 97 feature samples
+2025-09-24 17:19:49,793 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_1d: Saved 33 feature samples
+2025-09-24 17:19:49,812 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_1h: Saved 769 feature samples
+2025-09-24 17:19:49,821 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_1h: Saved 501 label samples
+2025-09-24 17:19:49,838 - __main__.FixedDatasetPipeline - INFO -   ✅ fedfunds_daily: Saved 851 feature samples
+2025-09-24 17:19:49,848 - __main__.FixedDatasetPipeline - INFO -   ✅ fedfunds_daily: Saved 583 label samples
+2025-09-24 17:19:49,946 - __main__.FixedDatasetPipeline - INFO -   ✅ dxy_daily: Saved 4881 feature samples
+2025-09-24 17:19:50,028 - __main__.FixedDatasetPipeline - INFO -   ✅ dxy_daily: Saved 4613 label samples
+2025-09-24 17:19:50,335 - __main__.FixedDatasetPipeline - INFO -   ✅ orderbook_metrics: Saved 11899 feature samples
+2025-09-24 17:19:50,539 - __main__.FixedDatasetPipeline - INFO -   ✅ orderbook_metrics: Saved 11631 label samples
+2025-09-24 17:19:50,549 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_60min: Saved 384 feature samples
+2025-09-24 17:19:50,552 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_60min: Saved 116 label samples
+2025-09-24 17:19:50,623 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_15m: Saved 3073 feature samples
+2025-09-24 17:19:50,670 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_15m: Saved 2805 label samples
+2025-09-24 17:19:50,676 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_4h: Saved 193 feature samples
+2025-09-24 17:19:50,724 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_5min: Saved 2097 feature samples
+2025-09-24 17:19:50,754 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_5min: Saved 1829 label samples
+2025-09-24 17:19:50,808 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_1min: Saved 2400 feature samples
+2025-09-24 17:19:50,843 - __main__.FixedDatasetPipeline - INFO -   ✅ eur_usd_1min: Saved 2132 label samples
+2025-09-24 17:19:50,854 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_2h: Saved 385 feature samples
+2025-09-24 17:19:50,856 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_2h: Saved 117 label samples
+2025-09-24 17:19:50,905 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_1m: Saved 2100 feature samples
+2025-09-24 17:19:50,935 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_1m: Saved 1832 label samples
+2025-09-24 17:19:51,034 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_5m: Saved 4200 feature samples
+2025-09-24 17:19:51,098 - __main__.FixedDatasetPipeline - INFO -   ✅ btcusdt_5m: Saved 3932 label samples
+2025-09-24 17:19:51,245 - __main__.FixedDatasetPipeline - INFO -   ✅ vix_daily: Saved 7500 feature samples
+2025-09-24 17:19:51,367 - __main__.FixedDatasetPipeline - INFO -   ✅ vix_daily: Saved 7232 label samples
+2025-09-24 17:19:51,368 - __main__.FixedDatasetPipeline - INFO - Datasets saved to data/tai_v6_datasets
+2025-09-24 17:19:51,368 - __main__.FixedDatasetPipeline - INFO -   Processed: 19 datasets
+2025-09-24 17:19:51,368 - __main__.FixedDatasetPipeline - INFO -   Total samples: 48,653
+2025-09-24 17:19:51,368 - __main__.FixedDatasetPipeline - INFO -   Pipeline type: synchronized
+2025-09-24 17:19:51,370 - __main__ - INFO - Pipeline ended at: 2025-09-24 17:19:51.370651

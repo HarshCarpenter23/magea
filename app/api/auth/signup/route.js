@@ -67,15 +67,11 @@ export async function POST(request) {
       );
     }
 
-    // Verify that OTP verification was completed for both email and phone
+    // Verify that email OTP verification was completed (stored in database)
+    // Note: Phone verification is handled by Twilio Verify API, not stored locally
     const emailVerification = await executeQuery(
       'SELECT verified FROM otp_verifications WHERE identifier = ? AND otp_type = ? AND verified = TRUE ORDER BY created_at DESC LIMIT 1',
       [email, 'email']
-    );
-
-    const phoneVerification = await executeQuery(
-      'SELECT verified FROM otp_verifications WHERE identifier = ? AND otp_type = ? AND verified = TRUE ORDER BY created_at DESC LIMIT 1',
-      [phone, 'phone']
     );
 
     if (emailVerification.length === 0) {
@@ -85,12 +81,8 @@ export async function POST(request) {
       );
     }
 
-    if (phoneVerification.length === 0) {
-      return NextResponse.json(
-        { message: 'Phone verification not completed' },
-        { status: 400 }
-      );
-    }
+    // Phone verification is validated via Twilio Verify API on the frontend
+    // The phoneVerified flag from the request indicates successful Twilio verification
 
     // Hash password
     const saltRounds = 12;

@@ -196,17 +196,7 @@ export default function JoinPage() {
             </p>
           </div>
 
-          {/* Success/Error Messages */}
-          {submitStatus === 'success' && (
-            <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center space-x-3">
-              <CheckCircle className="h-5 w-5 text-green-600" />
-              <div>
-                <p className="text-green-800 font-medium">Application Submitted Successfully!</p>
-                <p className="text-green-600 text-sm">We'll review your application and get back to you soon.</p>
-              </div>
-            </div>
-          )}
-
+          {/* Error Message */}
           {submitStatus === 'error' && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
               <p className="text-red-800 font-medium">Error submitting application</p>
@@ -975,6 +965,27 @@ export default function JoinPage() {
           </div>
         </div>
       </footer>
+
+      {/* Success Popup Modal */}
+      {submitStatus === 'success' && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-8 max-w-md mx-4 shadow-2xl">
+            <div className="text-center">
+              <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                <CheckCircle className="h-10 w-10 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Your request is submitted</h3>
+              <p className="text-gray-600 mb-6">We'll review your application and get back to you soon.</p>
+              <Button
+                onClick={() => setSubmitStatus('')}
+                className="px-8"
+              >
+                OK
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

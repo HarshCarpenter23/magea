@@ -30,13 +30,13 @@ export async function POST(request) {
           { status: 400 }
         );
       }
-      
+
       // Check if email already exists
       const existingEmail = await executeQuery(
         'SELECT id FROM users WHERE email = ?',
         [identifier]
       );
-      
+
       if (existingEmail.length > 0) {
         return NextResponse.json(
           { message: 'Email already registered' },
@@ -45,22 +45,31 @@ export async function POST(request) {
       }
     }
 
-    // Validate phone format (basic validation)
+    // Validate phone format (10-digit Indian mobile number)
     if (type === 'phone') {
-      const phoneRegex = /^\+?[\d\s\-\(\)]+$/;
-      if (!phoneRegex.test(identifier)) {
+      // Remove all non-digits for validation
+      let cleanPhone = identifier.replace(/\D/g, '');
+
+      // Remove country code if present
+      if (cleanPhone.startsWith('91') && cleanPhone.length === 12) {
+        cleanPhone = cleanPhone.substring(2);
+      } else if (cleanPhone.startsWith('0')) {
+        cleanPhone = cleanPhone.substring(1);
+      }
+
+      if (cleanPhone.length !== 10) {
         return NextResponse.json(
-          { message: 'Invalid phone format' },
+          { message: 'Please enter a valid 10-digit Indian mobile number' },
           { status: 400 }
         );
       }
-      
+
       // Check if phone already exists
       const existingPhone = await executeQuery(
         'SELECT id FROM users WHERE phone = ?',
         [identifier]
       );
-      
+
       if (existingPhone.length > 0) {
         return NextResponse.json(
           { message: 'Phone number already registered' },
@@ -69,35 +78,49 @@ export async function POST(request) {
       }
     }
 
-    // Generate and store OTP
-    const otpCode = generateOTP();
-    await storeOTP(identifier, otpCode, type);
-
-    // Send OTP
     let sendResult;
+
     if (type === 'email') {
+      // For email: Generate OTP locally and send via email
+      const otpCode = generateOTP();
+      await storeOTP(identifier, otpCode, type);
       sendResult = await sendEmailOTP(identifier, otpCode);
     } else {
-      sendResult = await sendSMSOTP(identifier, otpCode);
+      // For phone: 2Factor generates OTP automatically, we store the session_id
+      sendResult = await sendSMSOTP(identifier);
+
+      if (sendResult.success && sendResult.sessionId) {
+        // Store the session_id in database for later verification
+        await storeOTP(identifier, sendResult.sessionId, type);
+      }
     }
 
     if (!sendResult.success) {
       return NextResponse.json(
-        { 
+        {
           message: `Failed to send ${type} OTP`,
-          error: sendResult.error 
+          error: sendResult.error
         },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ 
-      message: `OTP sent successfully to ${identifier}`,
-      type 
+    return NextResponse.json({
+      message: `OTP sent successfully to ${type === 'email' ? identifier : 'your phone'}`,
+      type
     });
 
   } catch (error) {
     console.error('Send OTP error:', error);
+
+    // Handle specific error for invalid phone number
+    if (error.message && error.message.includes('Invalid phone number')) {
+      return NextResponse.json(
+        { message: error.message },
+        { status: 400 }
+      );
+    }
+
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }

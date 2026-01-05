@@ -1,21 +1,19 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Eye, EyeOff, ArrowLeft, Loader2 } from "lucide-react"
-import { useAuth } from "@/context/AuthContext"
+import { Eye, EyeOff, Loader2, Shield } from "lucide-react"
+import { useAdminAuth } from "@/context/AdminAuthContext"
 
-export default function LoginPage() {
+export default function AdminLoginPage() {
   const router = useRouter()
-  const { login } = useAuth()
+  const { adminLogin } = useAdminAuth()
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState({ type: '', text: '' })
@@ -40,7 +38,7 @@ export default function LoginPage() {
     setLoading(true)
 
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch('/api/admin/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,15 +48,11 @@ export default function LoginPage() {
 
       const data = await response.json()
 
-      if (response.ok) {
+      if (response.ok && data.success) {
         showMessage('success', 'Login successful!')
-
-        // Store user data using AuthContext
-        login(data.user)
-
-        // Redirect to dashboard after a short delay
+        adminLogin(data.admin)
         setTimeout(() => {
-          router.push('/dashboard')
+          router.push('/admin/dashboard')
         }, 1000)
       } else {
         showMessage('error', data.message || 'Login failed. Please try again.')
@@ -72,24 +66,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        {/* <div className="mb-6">
-          <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
-          </Link>
-        </div> */}
-
-        <Card className="shadow-xl border-0">
+        <Card className="shadow-xl border-0 bg-white/95 backdrop-blur">
           <CardHeader className="text-center pb-6">
             <div className="mx-auto mb-4">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
+              <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center">
+                <Shield className="w-8 h-8 text-white" />
               </div>
             </div>
-            <CardTitle className="text-2xl font-bold text-gray-900">Welcome Back</CardTitle>
-            <CardDescription className="text-gray-600">Sign in to your MAEGA account</CardDescription>
+            <CardTitle className="text-2xl font-bold text-gray-900">Admin Portal</CardTitle>
+            <CardDescription className="text-gray-600">Sign in to MAEGA Admin Dashboard</CardDescription>
           </CardHeader>
 
           <CardContent>
@@ -107,7 +94,7 @@ export default function LoginPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder="admin@maega.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
@@ -137,17 +124,7 @@ export default function LoginPage() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between text-sm">
-                {/* <label className="flex items-center">
-                  <input type="checkbox" className="mr-2" />
-                  Remember me
-                </label> */}
-                <Link href="/forgot-password" className="text-blue-600 hover:text-blue-700">
-                  Forgot password?
-                </Link>
-              </div>
-
-              <Button type="submit" className="w-full h-12 bg-blue-600 hover:bg-blue-700" disabled={loading}>
+              <Button type="submit" className="w-full h-12 bg-slate-800 hover:bg-slate-900" disabled={loading}>
                 {loading ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin mr-2" />
@@ -158,15 +135,6 @@ export default function LoginPage() {
                 )}
               </Button>
             </form>
-
-            <div className="mt-6 text-center">
-              <p className="text-gray-600">
-                Don't have an account?{" "}
-                <Link href="/signup" className="text-blue-600 hover:text-blue-700 font-medium">
-                  Sign up
-                </Link>
-              </p>
-            </div>
           </CardContent>
         </Card>
       </div>

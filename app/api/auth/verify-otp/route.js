@@ -1,6 +1,6 @@
 // app/api/auth/verify-otp/route.js
 import { NextResponse } from 'next/server';
-import { verifyOTP } from '../../../../lib/otpUtils.js';
+import { verifyOTP, verifySMSOTPVia2Factor } from '../../../../lib/otpUtils.js';
 
 export async function POST(request) {
   try {
@@ -20,18 +20,35 @@ export async function POST(request) {
       );
     }
 
-    const verificationResult = await verifyOTP(identifier, otpCode, type);
-
-    if (!verificationResult.success) {
+    // Validate OTP format (6 digits)
+    const cleanOtp = otpCode.toString().trim();
+    if (!/^\d{6}$/.test(cleanOtp)) {
       return NextResponse.json(
-        { message: verificationResult.message },
+        { message: 'Please enter a valid 6-digit OTP' },
         { status: 400 }
       );
     }
 
-    return NextResponse.json({ 
+    let verificationResult;
+
+    if (type === 'phone') {
+      // Use 2Factor.in API for phone verification
+      verificationResult = await verifySMSOTPVia2Factor(identifier, cleanOtp);
+    } else {
+      // Use database verification for email
+      verificationResult = await verifyOTP(identifier, cleanOtp, type);
+    }
+
+    if (!verificationResult.success) {
+      return NextResponse.json(
+        { message: verificationResult.message || verificationResult.error },
+        { status: 400 }
+      );
+    }
+
+    return NextResponse.json({
       message: verificationResult.message,
-      verified: true 
+      verified: true
     });
 
   } catch (error) {

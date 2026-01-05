@@ -3,12 +3,31 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useState } from "react"
+import { useRouter } from "next/navigation"
+import { LogOut } from "lucide-react"
+import { useAuth } from "@/context/AuthContext"
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { user, isLoggedIn, logout } = useAuth()
+  const router = useRouter()
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
+
+  const handleLogout = () => {
+    logout()
+    router.push('/')
+  }
+
+  const getUserInitials = () => {
+    if (!user) return ''
+    const firstName = user.firstName || user.first_name || ''
+    const lastName = user.lastName || user.last_name || ''
+    const firstInitial = firstName.charAt(0)?.toUpperCase() || ''
+    const lastInitial = lastName.charAt(0)?.toUpperCase() || ''
+    return firstInitial + lastInitial || user.email?.charAt(0)?.toUpperCase() || 'U'
   }
 
   return (
@@ -37,20 +56,54 @@ export default function Navigation() {
           <Link href="/join" className="text-foreground hover:text-blue-600 transition-colors font-medium">
             Join Now
           </Link>
-          <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
-            <Link href="/login">Login</Link>
-          </Button>
+          {isLoggedIn ? (
+            <div className="flex items-center space-x-3">
+              <Link href="/dashboard" className="flex items-center space-x-2">
+                <div className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">{getUserInitials()}</span>
+                </div>
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="p-2 hover:bg-red-50 rounded-full transition-colors"
+                title="Logout"
+              >
+                <LogOut className="w-5 h-5 text-red-500" />
+              </button>
+            </div>
+          ) : (
+            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
+              <Link href="/login">Login</Link>
+            </Button>
+          )}
         </nav>
 
         <div className="lg:hidden flex items-center space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            className="bg-blue-600 hover:bg-blue-700 text-white border-blue-600"
-            asChild
-          >
-            <Link href="/login">Login</Link>
-          </Button>
+          {isLoggedIn ? (
+            <>
+              <Link href="/dashboard" className="flex items-center">
+                <div className="w-9 h-9 bg-blue-600 rounded-full flex items-center justify-center">
+                  <span className="text-white font-semibold text-sm">{getUserInitials()}</span>
+                </div>
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="p-2 hover:bg-red-50 rounded-full transition-colors"
+                title="Logout"
+              >
+                <LogOut className="w-5 h-5 text-red-500" />
+              </button>
+            </>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-blue-600 hover:bg-blue-700 text-white border-blue-600"
+              asChild
+            >
+              <Link href="/login">Login</Link>
+            </Button>
+          )}
           <Button
             variant="ghost"
             size="sm"

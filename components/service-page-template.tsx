@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Checkbox } from "@/components/ui/checkbox"
-import { ArrowRight, CheckCircle, Clock, Shield, Star, Menu, X } from "lucide-react"
+import { ArrowRight, CheckCircle, Clock, Shield, Star } from "lucide-react"
 import Link from "next/link"
 import BookingModal from "@/components/booking-modal" // Import BookingModal component
 
@@ -43,7 +43,6 @@ export function ServicePageTemplate({
   testimonials = [],
 }: ServicePageProps) {
   const [selectedService, setSelectedService] = useState<string>("")
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
   const handleBookService = (serviceId: string, serviceName: string) => {
@@ -92,100 +91,7 @@ export function ServicePageTemplate({
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Link href="/" className="flex items-center space-x-3">
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hzPhiTcquwE6NDH7GuUV1CBffal9ao.png"
-                alt="MAEGA logo"
-                className="h-11 md:h-12 w-auto"
-              />
-              <span className="sr-only">MAEGA - On-Demand Services</span>
-            </Link>
-          </div>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/services" className="text-foreground hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link href="/about" className="text-foreground hover:text-primary transition-colors">
-              About
-            </Link>
-            <Link href="/portfolio" className="text-foreground hover:text-primary transition-colors">
-              Portfolio
-            </Link>
-            <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </Link>
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/join">Join Now</Link>
-            </Button>
-            <Button size="sm" asChild>
-              <Link href="/login">Login</Link>
-            </Button>
-          </nav>
-          <button
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
-            ) : (
-              <Menu className="h-6 w-6 text-foreground" />
-            )}
-          </button>
-        </div>
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background">
-            <nav className="container mx-auto px-4 py-4 space-y-4">
-              <Link
-                href="/services"
-                className="block text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link
-                href="/about"
-                className="block text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/portfolio"
-                className="block text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Portfolio
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-foreground hover:text-primary transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <div className="flex flex-col space-y-2 pt-2">
-                <Button variant="outline" size="sm" asChild>
-                  <Link href="/join" onClick={() => setIsMobileMenuOpen(false)}>
-                    Join Now
-                  </Link>
-                </Button>
-                <Button size="sm" asChild>
-                  <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                    Login
-                  </Link>
-                </Button>
-              </div>
-            </nav>
-          </div>
-        )}
-      </header>
-
+    <div className="min-h-screen bg-background pt-20">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-background to-card py-8 md:py-16">
         <div className="container mx-auto px-4">

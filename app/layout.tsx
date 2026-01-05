@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter, Poppins } from "next/font/google"
 import "./globals.css"
 import Navigation from "@/components/navigation"
+import { AuthProvider } from "@/context/AuthContext"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,9 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} antialiased`}>
+      <head>
+        <script src="https://checkout.razorpay.com/v1/checkout.js" async />
+      </head>
       <body className="font-body">
-        <Navigation />
-        {children}
+        <AuthProvider>
+          <Navigation />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   )
