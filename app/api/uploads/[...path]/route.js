@@ -1,21 +1,8 @@
 // app/api/uploads/[...path]/route.js
-// Serves files from the uploads directory
+// Legacy route - files are now stored on Vercel Blob
+// This route handles old URLs that might still be in the database
 
 import { NextResponse } from 'next/server';
-import fs from 'fs/promises';
-import path from 'path';
-
-// MIME type mapping
-const mimeTypes = {
-  '.jpg': 'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.png': 'image/png',
-  '.gif': 'image/gif',
-  '.webp': 'image/webp',
-  '.pdf': 'application/pdf',
-  '.doc': 'application/msword',
-  '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-};
 
 export async function GET(request, { params }) {
   try {
@@ -28,45 +15,15 @@ export async function GET(request, { params }) {
       );
     }
 
-    // Join path segments and sanitize to prevent directory traversal
-    const relativePath = pathSegments.join('/');
-
-    // Prevent directory traversal attacks
-    if (relativePath.includes('..') || relativePath.includes('~')) {
-      return NextResponse.json(
-        { error: 'Invalid file path' },
-        { status: 400 }
-      );
-    }
-
-    const filePath = path.join(process.cwd(), 'uploads', relativePath);
-
-    // Check if file exists
-    try {
-      await fs.access(filePath);
-    } catch {
-      return NextResponse.json(
-        { error: 'File not found' },
-        { status: 404 }
-      );
-    }
-
-    // Read the file
-    const fileBuffer = await fs.readFile(filePath);
-
-    // Determine content type
-    const ext = path.extname(filePath).toLowerCase();
-    const contentType = mimeTypes[ext] || 'application/octet-stream';
-
-    // Return the file with appropriate headers
-    return new NextResponse(fileBuffer, {
-      status: 200,
-      headers: {
-        'Content-Type': contentType,
-        'Content-Length': fileBuffer.length.toString(),
-        'Cache-Control': 'private, max-age=3600',
+    // For old file URLs, return a message that files have been migrated
+    // New uploads go directly to Vercel Blob and have different URLs
+    return NextResponse.json(
+      {
+        error: 'File not found',
+        message: 'This file may have been uploaded before migration to cloud storage. New uploads are stored on Vercel Blob with different URLs.'
       },
-    });
+      { status: 404 }
+    );
 
   } catch (error) {
     console.error('Error serving file:', error);
