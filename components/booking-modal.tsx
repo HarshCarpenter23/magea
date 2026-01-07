@@ -387,7 +387,7 @@ export default function BookingModal({ isOpen, onClose, serviceName, preSelected
     }
   }
 
-  const INSPECTION_FEE = 99 // Inspection fee in INR
+  const INSPECTION_FEE = 1 // Inspection fee in INR (set to 1 for testing)
 
   const handleRazorpayPayment = async () => {
     setIsSubmitting(true)
