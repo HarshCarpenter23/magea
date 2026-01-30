@@ -2,6 +2,8 @@
 import { executeQuery } from '../../../lib/db';
 import { put } from '@vercel/blob';
 
+const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB max per file
+
 export async function POST(request) {
   try {
     // Parse form data including files
@@ -17,6 +19,7 @@ export async function POST(request) {
       mobile1: formData.get('mobile1'),
       mobile2: formData.get('mobile2'),
       pan: formData.get('pan'),
+      email: formData.get('email'),
 
       // Bank Details
       bankName: formData.get('bankName'),
@@ -62,7 +65,7 @@ export async function POST(request) {
 
     // Validate required fields
     const requiredFields = [
-      'idNumber', 'fullName', 'dob', 'aadhaar', 'mobile1', 'pan',
+      'idNumber', 'fullName', 'dob', 'aadhaar', 'mobile1', 'pan', 'email',
       'bankName', 'branch', 'ifsc', 'accountType', 'accountNumber',
       'shopName', 'shopDoor', 'shopStreet', 'shopArea', 'shopLocation', 'shopPin',
       'fatherName', 'maritalStatus', 'houseDoor', 'houseStreet', 'houseArea', 'houseLocation', 'housePin',
@@ -92,6 +95,17 @@ export async function POST(request) {
     for (const fileField of files) {
       const file = formData.get(fileField);
       if (file && file instanceof File && file.size > 0) {
+        // Validate file size on server side
+        if (file.size > MAX_FILE_SIZE) {
+          return new Response(JSON.stringify({
+            success: false,
+            error: `File "${file.name}" is too large. Maximum size is 5MB.`
+          }), {
+            status: 413,
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
+
         try {
           // Get file extension
           const fileExtension = file.name.split('.').pop() || 'jpg';
@@ -145,7 +159,7 @@ export async function POST(request) {
       firstName,
       lastName,
       applicationData.mobile1,
-      null, // email not collected in form
+      applicationData.email,
       applicationData.dob,
       fileUrls.photo || null,
       houseAddress,

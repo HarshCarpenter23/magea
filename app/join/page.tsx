@@ -38,9 +38,19 @@ export default function JoinPage() {
     }
   }
 
+  const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB max per file
+  const [fileError, setFileError] = useState('')
+
   const handleFileChange = (field, event) => {
     const file = event.target.files[0]
     if (file) {
+      // Validate file size
+      if (file.size > MAX_FILE_SIZE) {
+        setFileError(`File "${file.name}" is too large. Maximum size is 5MB.`)
+        event.target.value = ''
+        return
+      }
+      setFileError('')
       setFiles(prev => ({
         ...prev,
         [field]: file
@@ -290,11 +300,24 @@ export default function JoinPage() {
                       <Label htmlFor="pan" className="text-sm font-medium">
                         PAN Card Number *
                       </Label>
-                      <Input 
-                        id="pan" 
-                        placeholder="Enter PAN number" 
+                      <Input
+                        id="pan"
+                        placeholder="Enter PAN number"
                         className="h-11"
                         onChange={(e) => handleInputChange('pan', e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-sm font-medium">
+                        Email Address *
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email address"
+                        className="h-11"
+                        onChange={(e) => handleInputChange('email', e.target.value)}
                         required
                       />
                     </div>
@@ -760,6 +783,12 @@ export default function JoinPage() {
                   <h3 className="font-heading font-semibold text-xl text-foreground border-b border-border pb-3">
                     Document Uploads
                   </h3>
+                  <p className="text-sm text-muted-foreground">Maximum file size: 5MB per file</p>
+                  {fileError && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
+                      <p className="text-red-600 text-sm">{fileError}</p>
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label className="text-sm font-medium">Upload Photo *</Label>
