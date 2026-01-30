@@ -230,22 +230,29 @@ export async function PUT(request, { params }) {
         [hashedPassword, adminId || null, id]
       );
 
-      // Send approval email with password
-      const emailResult = await sendApprovalEmail(
-        application.email,
-        application.first_name,
-        plainPassword
-      );
+      // Send approval email with password (only if email exists)
+      let emailResult = { success: false, error: 'No email address on file' };
+      if (application.email) {
+        emailResult = await sendApprovalEmail(
+          application.email,
+          application.first_name,
+          plainPassword
+        );
 
-      if (!emailResult.success) {
-        console.error('Failed to send approval email:', emailResult.error);
-        // Don't fail the request, just log it
+        if (!emailResult.success) {
+          console.error('Failed to send approval email:', emailResult.error);
+        }
+      } else {
+        console.warn('No email address for worker ID:', id);
       }
 
       return NextResponse.json({
         success: true,
-        message: 'Application approved successfully. Login credentials sent to the applicant.',
-        emailSent: emailResult.success
+        message: application.email
+          ? 'Application approved successfully. Login credentials sent to the applicant.'
+          : 'Application approved successfully. No email on file - please share credentials manually.',
+        emailSent: emailResult.success,
+        generatedPassword: application.email ? undefined : plainPassword // Return password if no email to send it to
       });
 
     } else {
@@ -258,16 +265,21 @@ export async function PUT(request, { params }) {
         [id]
       );
 
-      // Send rejection email
-      const emailResult = await sendRejectionEmail(
-        application.email,
-        application.first_name,
-        reason
-      );
+      // Send rejection email (only if email exists)
+      let emailResult = { success: false };
+      if (application.email) {
+        emailResult = await sendRejectionEmail(
+          application.email,
+          application.first_name,
+          reason
+        );
+      }
 
       return NextResponse.json({
         success: true,
-        message: 'Application rejected.',
+        message: application.email
+          ? 'Application rejected.'
+          : 'Application rejected. No email on file.',
         emailSent: emailResult.success
       });
     }

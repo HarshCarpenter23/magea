@@ -17,6 +17,7 @@ export default function JoinPage() {
   const [selectedAppliances, setSelectedAppliances] = useState([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
   const [files, setFiles] = useState({})
   const formRef = useRef(null)
 
@@ -77,7 +78,16 @@ export default function JoinPage() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('')
+    setErrorMessage('')
     setUploadProgress('')
+
+    // Validate at least one appliance is selected
+    if (selectedAppliances.length === 0) {
+      setSubmitStatus('error')
+      setErrorMessage('Please select at least one appliance you can handle.')
+      setIsSubmitting(false)
+      return
+    }
 
     try {
       // First, upload files directly to Vercel Blob (client-side)
@@ -138,10 +148,12 @@ export default function JoinPage() {
         }
       } else {
         setSubmitStatus('error')
+        setErrorMessage(result.error || 'Failed to submit application. Please try again.')
       }
     } catch (error) {
       console.error('Submit error:', error)
       setSubmitStatus('error')
+      setErrorMessage('Network error. Please check your connection and try again.')
     } finally {
       setIsSubmitting(false)
       setUploadProgress('')
@@ -238,7 +250,7 @@ export default function JoinPage() {
           {submitStatus === 'error' && (
             <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
               <p className="text-red-800 font-medium">Error submitting application</p>
-              <p className="text-red-600 text-sm">Please check your internet connection and try again.</p>
+              <p className="text-red-600 text-sm">{errorMessage}</p>
             </div>
           )}
 
@@ -403,8 +415,8 @@ export default function JoinPage() {
                           <SelectValue placeholder="Select account type" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="savings">Savings</SelectItem>
-                          <SelectItem value="current">Current</SelectItem>
+                          <SelectItem value="Savings">Savings</SelectItem>
+                          <SelectItem value="Current">Current</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -537,9 +549,9 @@ export default function JoinPage() {
                           <SelectValue placeholder="Select marital status" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="single">Single</SelectItem>
-                          <SelectItem value="married">Married</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="Single">Single</SelectItem>
+                          <SelectItem value="Married">Married</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -699,12 +711,12 @@ export default function JoinPage() {
                           <SelectValue placeholder="Select academic qualification" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="10th">10th Standard</SelectItem>
-                          <SelectItem value="12th">12th Standard</SelectItem>
-                          <SelectItem value="diploma">Diploma</SelectItem>
-                          <SelectItem value="graduate">Graduate</SelectItem>
-                          <SelectItem value="postgraduate">Post Graduate</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="10th Standard">10th Standard</SelectItem>
+                          <SelectItem value="12th Standard">12th Standard</SelectItem>
+                          <SelectItem value="Diploma">Diploma</SelectItem>
+                          <SelectItem value="Graduate">Graduate</SelectItem>
+                          <SelectItem value="Post Graduate">Post Graduate</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -717,11 +729,11 @@ export default function JoinPage() {
                           <SelectValue placeholder="Select technical qualification" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="iti">ITI</SelectItem>
-                          <SelectItem value="diploma">Technical Diploma</SelectItem>
-                          <SelectItem value="certificate">Certificate Course</SelectItem>
-                          <SelectItem value="experience">Experience Based</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="ITI">ITI</SelectItem>
+                          <SelectItem value="Technical Diploma">Technical Diploma</SelectItem>
+                          <SelectItem value="Certificate Course">Certificate Course</SelectItem>
+                          <SelectItem value="Experience Based">Experience Based</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -743,14 +755,14 @@ export default function JoinPage() {
                           <SelectValue placeholder="Select blood group" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="a+">A+</SelectItem>
-                          <SelectItem value="a-">A-</SelectItem>
-                          <SelectItem value="b+">B+</SelectItem>
-                          <SelectItem value="b-">B-</SelectItem>
-                          <SelectItem value="o+">O+</SelectItem>
-                          <SelectItem value="o-">O-</SelectItem>
-                          <SelectItem value="ab+">AB+</SelectItem>
-                          <SelectItem value="ab-">AB-</SelectItem>
+                          <SelectItem value="A+">A+</SelectItem>
+                          <SelectItem value="A-">A-</SelectItem>
+                          <SelectItem value="B+">B+</SelectItem>
+                          <SelectItem value="B-">B-</SelectItem>
+                          <SelectItem value="O+">O+</SelectItem>
+                          <SelectItem value="O-">O-</SelectItem>
+                          <SelectItem value="AB+">AB+</SelectItem>
+                          <SelectItem value="AB-">AB-</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

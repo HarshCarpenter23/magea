@@ -146,7 +146,7 @@ export async function POST(request) {
       applicationData.emergencyRelation,
       applicationData.emergencyContact,
       applicationData.emergencyRelation,
-      applicationData.bloodGroup ? applicationData.bloodGroup.toUpperCase() : null,
+      applicationData.bloodGroup || null,
       fileUrls.idProof || null,
       fileUrls.certificates || null,
       'Pending Approval',
@@ -194,9 +194,25 @@ export async function POST(request) {
 
   } catch (error) {
     console.error('Error submitting application:', error);
+
+    // Handle specific database errors
+    let errorMessage = 'Failed to submit application. Please try again.';
+
+    if (error.code === 'ER_DUP_ENTRY' || error.errno === 1062) {
+      if (error.message?.includes('phone')) {
+        errorMessage = 'This phone number is already registered. Please use a different number.';
+      } else if (error.message?.includes('email')) {
+        errorMessage = 'This email is already registered. Please use a different email.';
+      } else {
+        errorMessage = 'An account with these details already exists.';
+      }
+    } else if (error.code === 'WARN_DATA_TRUNCATED' || error.errno === 1265) {
+      errorMessage = 'Invalid data format. Please check all fields and try again.';
+    }
+
     return new Response(JSON.stringify({
       success: false,
-      error: 'Failed to submit application. Please try again.'
+      error: errorMessage
     }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }

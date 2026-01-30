@@ -16,7 +16,7 @@ export async function POST(request) {
         }
 
         return {
-          allowedContentTypes: ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'],
+          allowedContentTypes: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp', 'application/pdf'],
           maximumSizeInBytes: 5 * 1024 * 1024, // 5MB max
         };
       },
