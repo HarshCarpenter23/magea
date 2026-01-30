@@ -1,63 +1,66 @@
 // app/api/submit-join-application/route.js
 import { executeQuery } from '../../../lib/db';
 
+// Helper to convert undefined to null for database
+const toNull = (value) => (value === undefined || value === '' ? null : value);
+
 export async function POST(request) {
   try {
     // Parse JSON body (files are now uploaded directly to Vercel Blob from client)
     const body = await request.json();
 
-    // Extract form fields and file URLs
+    // Extract form fields and file URLs (convert undefined to null)
     const applicationData = {
       // Personal Details
-      idNumber: body.idNumber,
-      fullName: body.fullName,
-      dob: body.dob,
-      aadhaar: body.aadhaar,
-      mobile1: body.mobile1,
-      mobile2: body.mobile2,
-      pan: body.pan,
-      email: body.email,
+      idNumber: toNull(body.idNumber),
+      fullName: toNull(body.fullName),
+      dob: toNull(body.dob),
+      aadhaar: toNull(body.aadhaar),
+      mobile1: toNull(body.mobile1),
+      mobile2: toNull(body.mobile2),
+      pan: toNull(body.pan),
+      email: toNull(body.email),
 
       // Bank Details
-      bankName: body.bankName,
-      branch: body.branch,
-      ifsc: body.ifsc,
-      accountType: body.accountType,
-      accountNumber: body.accountNumber,
+      bankName: toNull(body.bankName),
+      branch: toNull(body.branch),
+      ifsc: toNull(body.ifsc),
+      accountType: toNull(body.accountType),
+      accountNumber: toNull(body.accountNumber),
 
       // Shop Details
-      shopName: body.shopName,
-      shopDoor: body.shopDoor,
-      shopStreet: body.shopStreet,
-      shopArea: body.shopArea,
-      shopLocation: body.shopLocation,
-      shopPin: body.shopPin,
+      shopName: toNull(body.shopName),
+      shopDoor: toNull(body.shopDoor),
+      shopStreet: toNull(body.shopStreet),
+      shopArea: toNull(body.shopArea),
+      shopLocation: toNull(body.shopLocation),
+      shopPin: toNull(body.shopPin),
 
       // House Details
-      fatherName: body.fatherName,
-      maritalStatus: body.maritalStatus,
-      spouseName: body.spouseName,
-      spouseMobile: body.spouseMobile,
-      houseDoor: body.houseDoor,
-      houseStreet: body.houseStreet,
-      houseArea: body.houseArea,
-      houseLocation: body.houseLocation,
-      housePin: body.housePin,
+      fatherName: toNull(body.fatherName),
+      maritalStatus: toNull(body.maritalStatus),
+      spouseName: toNull(body.spouseName),
+      spouseMobile: toNull(body.spouseMobile),
+      houseDoor: toNull(body.houseDoor),
+      houseStreet: toNull(body.houseStreet),
+      houseArea: toNull(body.houseArea),
+      houseLocation: toNull(body.houseLocation),
+      housePin: toNull(body.housePin),
 
       // Additional Details
-      techniciansCount: body.techniciansCount,
-      appliances: body.appliances,
+      techniciansCount: toNull(body.techniciansCount),
+      appliances: toNull(body.appliances),
 
       // Qualifications
-      academicQualification: body.academicQualification,
-      technicalQualification: body.technicalQualification,
+      academicQualification: toNull(body.academicQualification),
+      technicalQualification: toNull(body.technicalQualification),
 
       // Emergency & Other Details
-      bloodGroup: body.bloodGroup,
-      oldId: body.oldId,
-      emergencyContact: body.emergencyContact,
-      emergencyRelation: body.emergencyRelation,
-      experience: body.experience,
+      bloodGroup: toNull(body.bloodGroup),
+      oldId: toNull(body.oldId),
+      emergencyContact: toNull(body.emergencyContact),
+      emergencyRelation: toNull(body.emergencyRelation),
+      experience: toNull(body.experience),
     };
 
     // File URLs from client-side upload
@@ -88,15 +91,15 @@ export async function POST(request) {
     const workerCode = `MAEGA${Date.now()}${Math.random().toString(36).substr(2, 4).toUpperCase()}`;
 
     // Parse name into first and last name
-    const nameParts = applicationData.fullName.trim().split(' ');
+    const nameParts = (applicationData.fullName || '').trim().split(' ');
     const firstName = nameParts[0] || '';
     const lastName = nameParts.slice(1).join(' ') || '';
 
     // Prepare shop address
-    const shopAddress = `${applicationData.shopDoor}, ${applicationData.shopStreet}, ${applicationData.shopArea}, ${applicationData.shopLocation} - ${applicationData.shopPin}`;
+    const shopAddress = `${applicationData.shopDoor || ''}, ${applicationData.shopStreet || ''}, ${applicationData.shopArea || ''}, ${applicationData.shopLocation || ''} - ${applicationData.shopPin || ''}`;
 
     // Prepare house address
-    const houseAddress = `${applicationData.houseDoor}, ${applicationData.houseStreet}, ${applicationData.houseArea}, ${applicationData.houseLocation} - ${applicationData.housePin}`;
+    const houseAddress = `${applicationData.houseDoor || ''}, ${applicationData.houseStreet || ''}, ${applicationData.houseArea || ''}, ${applicationData.houseLocation || ''} - ${applicationData.housePin || ''}`;
 
     // Insert worker data into database
     const insertQuery = `
@@ -139,11 +142,11 @@ export async function POST(request) {
       applicationData.maritalStatus,
       applicationData.academicQualification,
       applicationData.technicalQualification,
-      `Appliances: ${applicationData.appliances}\nTechnicians Available: ${applicationData.techniciansCount}\nExperience: ${applicationData.experience}\nFather: ${applicationData.fatherName}\nSpouse: ${applicationData.spouseName || 'N/A'}\nSpouse Phone: ${applicationData.spouseMobile || 'N/A'}\nOld ID: ${applicationData.oldId || 'N/A'}\nAadhaar: ${applicationData.aadhaar}\nPAN: ${applicationData.pan}`,
+      `Appliances: ${applicationData.appliances || 'N/A'}\nTechnicians Available: ${applicationData.techniciansCount || 'N/A'}\nExperience: ${applicationData.experience || 'N/A'}\nFather: ${applicationData.fatherName || 'N/A'}\nSpouse: ${applicationData.spouseName || 'N/A'}\nSpouse Phone: ${applicationData.spouseMobile || 'N/A'}\nOld ID: ${applicationData.oldId || 'N/A'}\nAadhaar: ${applicationData.aadhaar || 'N/A'}\nPAN: ${applicationData.pan || 'N/A'}`,
       applicationData.emergencyRelation,
       applicationData.emergencyContact,
       applicationData.emergencyRelation,
-      applicationData.bloodGroup.toUpperCase(),
+      applicationData.bloodGroup ? applicationData.bloodGroup.toUpperCase() : null,
       fileUrls.idProof || null,
       fileUrls.certificates || null,
       'Pending Approval',
@@ -154,7 +157,7 @@ export async function POST(request) {
     const result = await executeQuery(insertQuery, values);
 
     // If successful, also create entries in worker_services table for appliances
-    if (result.insertId) {
+    if (result.insertId && applicationData.appliances) {
       const appliances = applicationData.appliances.split(',').map(a => a.trim());
       const applianceServiceMap = {
         'AC': 1,
