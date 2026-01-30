@@ -1,67 +1,67 @@
 // app/api/submit-join-application/route.js
 import { executeQuery } from '../../../lib/db';
-import { put } from '@vercel/blob';
-
-const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB max per file
 
 export async function POST(request) {
   try {
-    // Parse form data including files
-    const formData = await request.formData();
+    // Parse JSON body (files are now uploaded directly to Vercel Blob from client)
+    const body = await request.json();
 
-    // Extract all form fields
+    // Extract form fields and file URLs
     const applicationData = {
       // Personal Details
-      idNumber: formData.get('idNumber'),
-      fullName: formData.get('fullName'),
-      dob: formData.get('dob'),
-      aadhaar: formData.get('aadhaar'),
-      mobile1: formData.get('mobile1'),
-      mobile2: formData.get('mobile2'),
-      pan: formData.get('pan'),
-      email: formData.get('email'),
+      idNumber: body.idNumber,
+      fullName: body.fullName,
+      dob: body.dob,
+      aadhaar: body.aadhaar,
+      mobile1: body.mobile1,
+      mobile2: body.mobile2,
+      pan: body.pan,
+      email: body.email,
 
       // Bank Details
-      bankName: formData.get('bankName'),
-      branch: formData.get('branch'),
-      ifsc: formData.get('ifsc'),
-      accountType: formData.get('accountType'),
-      accountNumber: formData.get('accountNumber'),
+      bankName: body.bankName,
+      branch: body.branch,
+      ifsc: body.ifsc,
+      accountType: body.accountType,
+      accountNumber: body.accountNumber,
 
       // Shop Details
-      shopName: formData.get('shopName'),
-      shopDoor: formData.get('shopDoor'),
-      shopStreet: formData.get('shopStreet'),
-      shopArea: formData.get('shopArea'),
-      shopLocation: formData.get('shopLocation'),
-      shopPin: formData.get('shopPin'),
+      shopName: body.shopName,
+      shopDoor: body.shopDoor,
+      shopStreet: body.shopStreet,
+      shopArea: body.shopArea,
+      shopLocation: body.shopLocation,
+      shopPin: body.shopPin,
 
       // House Details
-      fatherName: formData.get('fatherName'),
-      maritalStatus: formData.get('maritalStatus'),
-      spouseName: formData.get('spouseName'),
-      spouseMobile: formData.get('spouseMobile'),
-      houseDoor: formData.get('houseDoor'),
-      houseStreet: formData.get('houseStreet'),
-      houseArea: formData.get('houseArea'),
-      houseLocation: formData.get('houseLocation'),
-      housePin: formData.get('housePin'),
+      fatherName: body.fatherName,
+      maritalStatus: body.maritalStatus,
+      spouseName: body.spouseName,
+      spouseMobile: body.spouseMobile,
+      houseDoor: body.houseDoor,
+      houseStreet: body.houseStreet,
+      houseArea: body.houseArea,
+      houseLocation: body.houseLocation,
+      housePin: body.housePin,
 
       // Additional Details
-      techniciansCount: formData.get('techniciansCount'),
-      appliances: formData.get('appliances'),
+      techniciansCount: body.techniciansCount,
+      appliances: body.appliances,
 
       // Qualifications
-      academicQualification: formData.get('academicQualification'),
-      technicalQualification: formData.get('technicalQualification'),
+      academicQualification: body.academicQualification,
+      technicalQualification: body.technicalQualification,
 
       // Emergency & Other Details
-      bloodGroup: formData.get('bloodGroup'),
-      oldId: formData.get('oldId'),
-      emergencyContact: formData.get('emergencyContact'),
-      emergencyRelation: formData.get('emergencyRelation'),
-      experience: formData.get('experience'),
+      bloodGroup: body.bloodGroup,
+      oldId: body.oldId,
+      emergencyContact: body.emergencyContact,
+      emergencyRelation: body.emergencyRelation,
+      experience: body.experience,
     };
+
+    // File URLs from client-side upload
+    const fileUrls = body.fileUrls || {};
 
     // Validate required fields
     const requiredFields = [
@@ -82,47 +82,6 @@ export async function POST(request) {
         status: 400,
         headers: { 'Content-Type': 'application/json' }
       });
-    }
-
-    // Handle file uploads using Vercel Blob
-    const sanitizedName = applicationData.fullName.replace(/[^a-zA-Z0-9]/g, '_');
-    const sanitizedIdNumber = applicationData.idNumber.replace(/[^a-zA-Z0-9]/g, '_');
-    const folderName = `${sanitizedName}-${sanitizedIdNumber}`;
-
-    const fileUrls = {};
-    const files = ['photo', 'idProof', 'certificates'];
-
-    for (const fileField of files) {
-      const file = formData.get(fileField);
-      if (file && file instanceof File && file.size > 0) {
-        // Validate file size on server side
-        if (file.size > MAX_FILE_SIZE) {
-          return new Response(JSON.stringify({
-            success: false,
-            error: `File "${file.name}" is too large. Maximum size is 5MB.`
-          }), {
-            status: 413,
-            headers: { 'Content-Type': 'application/json' }
-          });
-        }
-
-        try {
-          // Get file extension
-          const fileExtension = file.name.split('.').pop() || 'jpg';
-          const blobPath = `workers/${folderName}/${fileField}.${fileExtension}`;
-
-          // Upload to Vercel Blob
-          const blob = await put(blobPath, file, {
-            access: 'public',
-            addRandomSuffix: false,
-          });
-
-          fileUrls[fileField] = blob.url;
-        } catch (uploadError) {
-          console.error(`Error uploading ${fileField}:`, uploadError);
-          // Continue with other files even if one fails
-        }
-      }
     }
 
     // Generate worker code
@@ -161,7 +120,7 @@ export async function POST(request) {
       applicationData.mobile1,
       applicationData.email,
       applicationData.dob,
-      fileUrls.photo || null,
+      fileUrls.photo || null, // From client-side upload
       houseAddress,
       null, // address_line2
       applicationData.houseArea, // city

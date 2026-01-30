@@ -7,9 +7,10 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Upload, ArrowRight, Users, Shield, Star, Mail, CheckCircle, X } from "lucide-react"
+import { Upload, ArrowRight, Users, Shield, Star, Mail, CheckCircle, X, Loader2 } from "lucide-react"
 import Link from "next/link"
 import { useState, useRef } from "react"
+import { upload } from "@vercel/blob/client"
 
 export default function JoinPage() {
   const [formData, setFormData] = useState({})
@@ -70,32 +71,58 @@ export default function JoinPage() {
     if (input) input.value = ''
   }
 
+  const [uploadProgress, setUploadProgress] = useState('')
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus('')
+    setUploadProgress('')
 
     try {
-      // Create FormData object for file upload
-      const formDataToSend = new FormData()
-      
-      // Append form fields
-      Object.entries(formData).forEach(([key, value]) => {
-        formDataToSend.append(key, value || '')
-      })
-      
-      // Append appliances
-      formDataToSend.append('appliances', selectedAppliances.join(', '))
-      
-      // Append files
-      Object.entries(files).forEach(([key, file]) => {
-        formDataToSend.append(key, file)
-      })
+      // First, upload files directly to Vercel Blob (client-side)
+      const fileUrls = {}
+      const fileEntries = Object.entries(files)
 
-      // Submit to Next.js API route
+      if (fileEntries.length > 0) {
+        setUploadProgress('Uploading files...')
+
+        // Generate a folder name based on form data
+        const sanitizedName = (formData.fullName || 'unknown').replace(/[^a-zA-Z0-9]/g, '_')
+        const sanitizedId = (formData.idNumber || Date.now()).toString().replace(/[^a-zA-Z0-9]/g, '_')
+        const folderName = `${sanitizedName}-${sanitizedId}`
+
+        for (const [key, file] of fileEntries) {
+          try {
+            const fileExtension = file.name.split('.').pop() || 'jpg'
+            const blobPath = `workers/${folderName}/${key}.${fileExtension}`
+
+            const blob = await upload(blobPath, file, {
+              access: 'public',
+              handleUploadUrl: '/api/upload-token',
+            })
+
+            fileUrls[key] = blob.url
+          } catch (uploadError) {
+            console.error(`Error uploading ${key}:`, uploadError)
+            // Continue with other files
+          }
+        }
+      }
+
+      setUploadProgress('Submitting application...')
+
+      // Send form data with file URLs (not files) to API
       const response = await fetch('/api/submit-join-application', {
         method: 'POST',
-        body: formDataToSend,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          appliances: selectedAppliances.join(', '),
+          fileUrls,
+        }),
       })
 
       const result = await response.json()
@@ -117,6 +144,7 @@ export default function JoinPage() {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
+      setUploadProgress('')
     }
   }
 
@@ -871,16 +899,16 @@ export default function JoinPage() {
 
                 {/* Submit Button */}
                 <div className="text-center pt-8">
-                  <Button 
-                    type="submit" 
-                    size="lg" 
+                  <Button
+                    type="submit"
+                    size="lg"
                     className="text-lg px-12 py-4 h-auto"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
                       <>
-                        <Mail className="mr-2 h-5 w-5 animate-spin" />
-                        Submitting Application...
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        {uploadProgress || 'Submitting Application...'}
                       </>
                     ) : (
                       <>
