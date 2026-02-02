@@ -256,7 +256,7 @@ export function ServicePageTemplate({
                 <Card key={index} className="border-0 shadow-lg">
                   <CardHeader>
                     <div className="flex items-center space-x-1 mb-2">
-                      {[...Array(testimonial.rating)].map((_, i) => (
+                      {[...Array(Number(testimonial.rating) || 0)].map((_, i) => (
                         <Star key={i} className="h-4 w-4 text-accent fill-current" />
                       ))}
                     </div>

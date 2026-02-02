@@ -55,14 +55,14 @@ async function sendApprovalEmail(email, firstName, password) {
 
         <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 25px 0;">
           <h3 style="color: #1f2937; margin-top: 0;">Your Login Credentials</h3>
-          <p style="margin: 10px 0;"><strong>Portal:</strong> <a href="https://maega-partners.in" style="color: #2563eb;">maega-partners.in</a></p>
+          <p style="margin: 10px 0;"><strong>Portal:</strong> <a href="https://magea-partner.vercel.app/" style="color: #2563eb;">magea-partner.vercel.app</a></p>
           <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
           <p style="margin: 10px 0;"><strong>Password:</strong> <span style="font-family: monospace; background-color: #e5e7eb; padding: 4px 8px; border-radius: 4px;">${password}</span></p>
         </div>
 
         <div style="background-color: #fef3c7; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #f59e0b;">
           <p style="color: #92400e; margin: 0; font-size: 14px;">
-            <strong>Important:</strong> Please change your password after your first login for security purposes.
+            <strong>Important:</strong> Please keep your login credentials confidential and consider starring this email for easy access to your login details.
           </p>
         </div>
 
